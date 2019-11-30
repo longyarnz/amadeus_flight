@@ -35,7 +35,6 @@
 				_qs.currentInt = parseInt(_qs.$current.text(), 10),
 				_qs.sTitle = _qs.title.substring(0, _qs.title.length - 1);
 				_qs.setTitle;
-
 				_qs.inputFocus();
 				_qs.increment();
 				_qs.decrement();
@@ -44,7 +43,6 @@
 			inputFocus: function() {
 				_qs.fireEvent(_qs.$input, 'focus', function(e){
 					_qs.$box.addClass('show');
-					// console.log(_qs.$input.val());
 					if(!_qs.$input.val()) {
 						_qs.setTitle = _qs.sTitle;
 						_qs.inputValue();
@@ -52,6 +50,7 @@
 				});
 			},
 			inputValue: function() {
+				if (_qs.setTitle === 'Childre') _qs.setTitle = 'Child';
 				_qs.$input.val(_qs.currentInt + ' ' + _qs.setTitle);
 			},
 			writeCurrent: function() {
@@ -60,8 +59,9 @@
 			increment: function() {
 				_qs.fireEvent(_qs.$increment, 'click', function(e){
 					e.preventDefault();
-					_qs.setTitle = _qs.title;
 					_qs.currentInt++;
+					_qs.setTitle = _qs.sTitle;
+					if (_qs.currentInt > 1) _qs.setTitle = _qs.title;
 					_qs.writeCurrent();
 					_qs.inputValue();
 				});
@@ -69,12 +69,10 @@
 			decrement: function() {
 				_qs.fireEvent(_qs.$decrement, 'click', function(e){
 					e.preventDefault();
-					if(_qs.currentInt > 1) {
-						_qs.setTitle = _qs.title;
-						if(_qs.currentInt === 2) {
-							_qs.setTitle = _qs.sTitle;
-						}
+					_qs.setTitle = _qs.sTitle;
+					if(_qs.currentInt > 0) {
 						_qs.currentInt--;
+						if (_qs.currentInt > 1) _qs.setTitle = _qs.title;
 						_qs.writeCurrent();
 						_qs.inputValue();
 					}
