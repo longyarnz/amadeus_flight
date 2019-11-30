@@ -14556,8 +14556,8 @@ body {
   margin: 10px auto 0px;
 }
 option {
-  background: #ff6c2d;
-  color: #fff;
+  background: #fff;
+  color: #000;
   padding: 10px 2px;
   height: 20px;
 }
