@@ -14570,3 +14570,6 @@ input {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.theme-search-area-form {
+  margin-bottom: 20px;
+}
