@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $('form').submit(function (e) {
+  $('form').submit(async function (e) {
     e.preventDefault();
     const _this = $(this)[0];
     const form = new FormData(_this);
@@ -11,15 +11,13 @@ $(document).ready(function () {
       const selector = datePicker ? `${key}_date` : key;
       const element = $(`[name="${selector}"]`)[0];
       if (checksFail(check, element, key)) return;
-
       value = extractSearchParams(key, value);
       value = getIATA(key, value);
-      if (noFlyZone(key, value, element)) return;
-
       inputs[key] = value;
     }
 
-    sendRequest(inputs);
+    const cookie = await checkAuthorization();
+    sendRequest(inputs, cookie);
   });
 })
 
@@ -53,15 +51,6 @@ function extractSearchParams(key, value) {
   return value;
 }
 
-function noFlyZone(key, value, element) {
-  if (/(destination_city|departure_city)/.test(key) && value === '') {
-    $(element).parent().one('click', () => resetCustomValidity(element));
-    element.setCustomValidity(`This is a NO-FLY-ZONE`);
-    element.focus();
-    return true;
-  }
-}
-
 function validateInput(key, input) {
   switch (key) {
     case 'departure_city':
@@ -85,6 +74,10 @@ function validateInput(key, input) {
 }
 
 async function checkAuthorization() {
+  let login;
+  const amadeus_cookie = localStorage.getItem('amadeus_cookie');
+  if (amadeus_cookie) return amadeus_cookie;
+
   const URL = 'http://www.ije-api.tcore.xyz/v1/auth/login';
   const body = JSON.stringify({
     body: {
@@ -94,7 +87,7 @@ async function checkAuthorization() {
   });
 
   try {
-    let login = await fetch(URL, {
+    login = await fetch(URL, {
       body,
       method: 'POST',
       headers: {
@@ -102,37 +95,39 @@ async function checkAuthorization() {
       }
     });
     login = await login.json();
-    console.log(login);
+    login = login.body.data.api_token;
+    localStorage.setItem('amadeus_cookie', login);
   }
   catch (err) {
     console.log(err);
   }
+  finally {
+    return login;
+  }
 }
 
-async function sendRequest(inputs) {
+async function sendRequest(inputs, cookie) {
   const URL = 'http://www.ije-api.tcore.xyz/v1/flight/search-flight';
   const { departure_city, destination_city, departure_date, return_date, ...search_param } = inputs;
   const body = JSON.stringify({
-    header: {
-      cookie: ''
-    },
+    header: { cookie },
     body: {
       origin_destinations: [{
         departure_city, destination_city, departure_date, return_date,
       }],
       search_param: {
-        preferred_airline_code: 'EK', calendar: true, ...search_param
+        preferred_airline_code: '', calendar: false, ...search_param
       }
     }
   });
-  
+
   try {
-    let flights = await fetch(URL, { 
+    let flights = await fetch(URL, {
       method: 'POST',
       body,
-      headers: { 
+      headers: {
         'Content-Type': 'application/json'
-      }, 
+      },
     });
     flights = await flights.json();
     console.log(flights);
