@@ -131,6 +131,9 @@ async function sendRequest(inputs, cookie) {
     });
     flights = await flights.json();
     console.log(flights);
+    localStorage.setItem('amadeus_data', JSON.stringify(flights.body));
+    localStorage.setItem('amadeus_inputs', JSON.stringify(inputs));
+    location.assign('results.html')
   }
   catch (err) {
     console.log(err)
