@@ -325,13 +325,16 @@ function autocomplete() {
         minLength: 3,
         showHintOnFocus: true,
         source: function(q, cb) {
+            if (q.length < 3) return;
+            const URL = `http://www.ije-api.tcore.xyz/v1/plugins/cities-type-ahead/${q}`;
             return $.ajax({
-                dataType: 'jsonp',
+                dataType: 'json',
                 type: 'get',
-                url: 'http://gd.geobytes.com/AutoCompleteCity?callback=?&q=' + q,
-                chache: false,
-                success: function(data) {
+                url: URL,
+                cache: false,
+                success: function({ data }) {
                     var res = [];
+                    data = data.map(({ name, code, country_name }) => `${name}, ${code}, ${country_name}`);
                     $.each(data, function(index, val){
                         if(val !== "%s") {
                             res.push({

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $('form').submit(async function (e) {
+  $('form').submit(function (e) {
     e.preventDefault();
     const _this = $(this)[0];
     const form = new FormData(_this);
@@ -13,7 +13,7 @@ $(document).ready(function () {
       if (checksFail(check, element, key)) return;
 
       value = extractSearchParams(key, value);
-      value = await executeIATA(key, value);
+      value = getIATA(key, value);
       if (noFlyZone(key, value, element)) return;
 
       inputs[key] = value;
@@ -32,10 +32,10 @@ function checksFail(check, element, key) {
   }
 }
 
-async function executeIATA(key, value) {
+function getIATA(key, value) {
   if (/(destination_city|departure_city)/.test(key)) {
-    const [city, , country] = value.split(', ');
-    return await getIATA(city, country);
+    const [, code] = value.split(', ');
+    return code;
   }
   return value;
 }
@@ -62,16 +62,6 @@ function noFlyZone(key, value, element) {
   }
 }
 
-function getIATA(city, country) {
-  return new Promise((resolve, reject) => {
-    $.getJSON('IATA.json', function (data) {
-      const code = data.find(obj => obj.city === city && obj.country === country) || {};
-      resolve(code.iata || '');
-      reject(city);
-    });
-  });
-}
-
 function validateInput(key, input) {
   switch (key) {
     case 'departure_city':
@@ -85,7 +75,7 @@ function validateInput(key, input) {
     case 'cabin':
       return typeof input === 'string' && /(All|Economy|Business|First|Premium)/.test(input);
     case 'no_of_adult':
-      return (/[1-9][\d]* Adult[s]?/).test(input);
+      return (/[0-9][\d]* Adult[s]?/).test(input);
     case 'no_of_child':
       return (/[0-9][\d]* Child[dren]?/).test(input);
     case 'no_of_infant':
@@ -94,15 +84,45 @@ function validateInput(key, input) {
   }
 }
 
+async function checkAuthorization() {
+  const URL = 'http://www.ije-api.tcore.xyz/v1/auth/login';
+  const body = JSON.stringify({
+    body: {
+      email: 'customer@travelportal.com',
+      password: 'customer'
+    }
+  });
+
+  try {
+    let login = await fetch(URL, {
+      body,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    login = await login.json();
+    console.log(login);
+  }
+  catch (err) {
+    console.log(err);
+  }
+}
+
 async function sendRequest(inputs) {
   const URL = 'http://www.ije-api.tcore.xyz/v1/flight/search-flight';
   const { departure_city, destination_city, departure_date, return_date, ...search_param } = inputs;
   const body = JSON.stringify({
-    origin_destinations: [{
-      departure_city, destination_city, departure_date, return_date,
-    }],
-    search_param: {
-      preferred_airline_code: 'EK', calendar: true, ...search_param
+    header: {
+      cookie: ''
+    },
+    body: {
+      origin_destinations: [{
+        departure_city, destination_city, departure_date, return_date,
+      }],
+      search_param: {
+        preferred_airline_code: 'EK', calendar: true, ...search_param
+      }
     }
   });
   
@@ -111,7 +131,6 @@ async function sendRequest(inputs) {
       method: 'POST',
       body,
       headers: { 
-        cookie: '',
         'Content-Type': 'application/json'
       }, 
     });
