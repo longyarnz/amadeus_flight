@@ -7,7 +7,7 @@ $(document).ready(function () {
 
     for (let [key, value] of form.entries()) {
       const check = validateInput(key, value);
-      const datePicker = ['depart', 'return'].includes(key);
+      const datePicker = /(depart|return)/.test(key);
       const selector = datePicker ? `${key}_date` : key;
       const element = $(`[name="${selector}"]`)[0];
       if (checksFail(check, element, key)) return;
@@ -33,7 +33,7 @@ function checksFail(check, element, key) {
 }
 
 async function executeIATA(key, value) {
-  if (['destination_city', 'departure_city'].includes(key)) {
+  if (/(destination_city|departure_city)/.test(key)) {
     const [city, , country] = value.split(', ');
     return await getIATA(city, country);
   }
@@ -54,7 +54,7 @@ function extractSearchParams(key, value) {
 }
 
 function noFlyZone(key, value, element) {
-  if (['destination_city', 'departure_city'].includes(key) && value === '') {
+  if (/(destination_city|departure_city)/.test(key) && value === '') {
     $(element).parent().one('click', () => resetCustomValidity(element));
     element.setCustomValidity(`This is a NO-FLY-ZONE`);
     element.focus();
@@ -83,7 +83,7 @@ function validateInput(key, input) {
     case 'return':
       return typeof input === 'object';
     case 'cabin':
-      return typeof input === 'string' && ['economy', 'business'].includes(input);
+      return typeof input === 'string' && /(All|Economy|Business|First|Premium)/.test(input);
     case 'no_of_adult':
       return (/[1-9][\d]* Adult[s]?/).test(input);
     case 'no_of_child':
@@ -95,7 +95,6 @@ function validateInput(key, input) {
 }
 
 async function sendRequest(inputs) {
-  console.log(inputs);
   const URL = 'http://www.ije-api.tcore.xyz/v1/flight/search-flight';
   const { departure_city, destination_city, departure_date, return_date, ...search_param } = inputs;
   const body = JSON.stringify({
@@ -106,14 +105,14 @@ async function sendRequest(inputs) {
       preferred_airline_code: 'EK', calendar: true, ...search_param
     }
   });
-  console.log(body);
+  
   try {
     let flights = await fetch(URL, { 
       method: 'POST',
       body,
       headers: { 
         cookie: '',
-        'Content-Type': 'application/json' 
+        'Content-Type': 'application/json'
       }, 
     });
     flights = await flights.json();
