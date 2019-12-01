@@ -7,10 +7,9 @@ $(document).ready(function () {
     for (const [key, value] of form.entries()) {
       const check = validateInput(key, value);
       const datePicker = ['depart', 'return'].includes(key);
-      const selector = datePicker ? `pseudo_${key}` : key;
+      const selector = datePicker ? `${key}_date` : key;
       const element = $(`[name="${selector}"]`)[0];
       if (!check) {
-        console.log(check, [element]);
         $(element).parent().one('click', () => resetCustomValidity(element));
         element.setCustomValidity(`Error: check your ${key} info.`);
         element.focus();
@@ -23,28 +22,26 @@ $(document).ready(function () {
 })
 
 function resetCustomValidity(element) {
-  console.log(element);
   element.setCustomValidity('');
 };
 
 function validateInput(key, input) {
-  console.log(key, input);
   switch (key) {
-    case 'departure':
-    case 'destination':
-    case 'pseudo_depart':
-    case 'pseudo_return':
+    case 'departure_city':
+    case 'destination_city':
+    case 'departure_date':
+    case 'return_date':
       return typeof input === 'string';
-    case 'depart':
+    case 'departure':
     case 'return':
       return typeof input === 'object';
     case 'cabin':
       return typeof input === 'string' && ['economy', 'business'].includes(input);
-    case 'adults':
+    case 'no_of_adult':
       return (/[1-9][\d]* Adult[s]?/).test(input);
-    case 'children':
+    case 'no_of_child':
       return (/[0-9][\d]* Child[dren]?/).test(input);
-    case 'infants':
+    case 'no_of_infant':
       return (/[0-9][\d]* Infant[s]?/).test(input);
     default: return false;
   }
