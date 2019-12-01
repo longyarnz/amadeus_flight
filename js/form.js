@@ -10,13 +10,16 @@ $(document).ready(function () {
       const datePicker = ['depart', 'return'].includes(key);
       const selector = datePicker ? `${key}_date` : key;
       const element = $(`[name="${selector}"]`)[0];
-      if(checksFail(check, element, key)) return;
+      if (checksFail(check, element, key)) return;
 
+      value = extractSearchParams(key, value);
       value = await executeIATA(key, value);
-      if(noFlyZone(key, value, element)) return;
+      if (noFlyZone(key, value, element)) return;
 
       inputs[key] = value;
     }
+
+    sendRequest(inputs);
   });
 })
 
@@ -41,6 +44,15 @@ function resetCustomValidity(element) {
   element.setCustomValidity('');
 };
 
+function extractSearchParams(key, value) {
+  const check = /^[no_of_]/.test(key);
+  if (check) {
+    const number = parseInt(value.split(' ')[0]);
+    return number;
+  }
+  return value;
+}
+
 function noFlyZone(key, value, element) {
   if (['destination_city', 'departure_city'].includes(key) && value === '') {
     $(element).parent().one('click', () => resetCustomValidity(element));
@@ -52,7 +64,7 @@ function noFlyZone(key, value, element) {
 
 function getIATA(city, country) {
   return new Promise((resolve, reject) => {
-    $.getJSON('IATA.json', function(data) {
+    $.getJSON('IATA.json', function (data) {
       const code = data.find(obj => obj.city === city && obj.country === country) || {};
       resolve(code.iata || '');
       reject(city);
@@ -79,5 +91,35 @@ function validateInput(key, input) {
     case 'no_of_infant':
       return (/[0-9][\d]* Infant[s]?/).test(input);
     default: return false;
+  }
+}
+
+async function sendRequest(inputs) {
+  console.log(inputs);
+  const URL = 'http://www.ije-api.tcore.xyz/v1/flight/search-flight';
+  const { departure_city, destination_city, departure_date, return_date, ...search_param } = inputs;
+  const body = JSON.stringify({
+    origin_destinations: [{
+      departure_city, destination_city, departure_date, return_date,
+    }],
+    search_param: {
+      preferred_airline_code: 'EK', calendar: true, ...search_param
+    }
+  });
+  console.log(body);
+  try {
+    let flights = await fetch(URL, { 
+      method: 'POST',
+      body,
+      headers: { 
+        cookie: '',
+        'Content-Type': 'application/json' 
+      }, 
+    });
+    flights = await flights.json();
+    console.log(flights);
+  }
+  catch (err) {
+    console.log(err)
   }
 }
