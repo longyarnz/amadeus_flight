@@ -1,0 +1,1524 @@
+{
+  "header": {
+    "cookie": "qs4njzhsif3gtjmgdi51gb3f"
+  },
+  "body": {
+    "message": "Available flights returned",
+    "status": 200,
+    "data": {
+      "has_more_result": "false",
+      "itineraries": [
+        {
+          "origin_destinations": [
+            {
+              "ref_number": "0",
+              "direction_id": "0",
+              "elapsed_time": "1015",
+              "segments": [
+                {
+                  "departure": {
+                    "date": "2019-12-23",
+                    "time": "13:40:00",
+                    "airport": {
+                      "code": "LOS",
+                      "name": "Lagos-Murtala Muhammed Intl, Nigeria",
+                      "city_code": "",
+                      "city_name": "Lagos",
+                      "country_code": "NG",
+                      "country_name": "Nigeria",
+                      "terminal": "I"
+                    }
+                  },
+                  "arrival": {
+                    "date": "2019-12-23",
+                    "time": "21:00:00",
+                    "airport": {
+                      "code": "ADD",
+                      "name": "Addis Ababa-Bole Intl, Ethiopia",
+                      "city_code": "",
+                      "city_name": "Addis Ababa",
+                      "country_code": "ET",
+                      "country_name": "Ethiopia",
+                      "terminal": "I"
+                    }
+                  },
+                  "flight_number": "900",
+                  "res_book_desig_code": "H",
+                  "flight_duration": "",
+                  "operating_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "equipment": {
+                    "code": "77W",
+                    "name": "Boeing 777-300Er"
+                  },
+                  "marketing_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "baggage": [],
+                  "cabins": [
+                    {
+                      "rph": "ADT",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    },
+                    {
+                      "rph": "CHD",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    }
+                  ]
+                },
+                {
+                  "departure": {
+                    "date": "2019-12-23",
+                    "time": "21:45:00",
+                    "airport": {
+                      "code": "ADD",
+                      "name": "Addis Ababa-Bole Intl, Ethiopia",
+                      "city_code": "",
+                      "city_name": "Addis Ababa",
+                      "country_code": "ET",
+                      "country_name": "Ethiopia",
+                      "terminal": "2"
+                    }
+                  },
+                  "arrival": {
+                    "date": "2019-12-24",
+                    "time": "02:55:00",
+                    "airport": {
+                      "code": "DXB",
+                      "name": "Dubai-Dubai Intl, United Arab Emirates",
+                      "city_code": "",
+                      "city_name": "Dubai",
+                      "country_code": "AE",
+                      "country_name": "United Arab Emirates",
+                      "terminal": "2"
+                    }
+                  },
+                  "flight_number": "600",
+                  "res_book_desig_code": "H",
+                  "flight_duration": "",
+                  "operating_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "equipment": {
+                    "code": "",
+                    "name": ""
+                  },
+                  "marketing_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "baggage": [],
+                  "cabins": [
+                    {
+                      "rph": "ADT",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    },
+                    {
+                      "rph": "CHD",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    }
+                  ]
+                }
+              ],
+              "option_pricing_info": ""
+            }
+          ],
+          "validating_airline_code": "ET",
+          "combination_id": "0",
+          "sequence_number": "0",
+          "cabin": {
+            "code": "M",
+            "name": "Economy"
+          },
+          "pricing": {
+            "provider": {
+              "currency": {
+                "code": "NGN",
+                "unit": "naira",
+                "decimal": 0
+              },
+              "base_fare": "138726",
+              "mark_up_fare": "0",
+              "total_fare": "314506",
+              "fare_break_down": [
+                {
+                  "passenger": {
+                    "code": "ADT",
+                    "quantity": "1"
+                  },
+                  "provider_fare": {
+                    "base": "79324",
+                    "taxes": [
+                      "88388"
+                    ],
+                    "total": "167712"
+                  },
+                  "ticket_designator": [
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "PENALTY APPLIES|"
+                    },
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "LAST TKT DTE|23DEC19| - DATE OF ORIGIN|"
+                    }
+                  ]
+                },
+                {
+                  "passenger": {
+                    "code": "CHD",
+                    "quantity": "1"
+                  },
+                  "provider_fare": {
+                    "base": "59402",
+                    "taxes": [
+                      "87392"
+                    ],
+                    "total": "146794"
+                  },
+                  "ticket_designator": [
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "PENALTY APPLIES|"
+                    },
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "LAST TKT DTE|23DEC19| - DATE OF ORIGIN|"
+                    }
+                  ]
+                }
+              ]
+            },
+            "portal_fare": {
+              "currency": {
+                "code": "NGN",
+                "unit": "naira",
+                "decimal": 0
+              },
+              "base_fare": "314506",
+              "mark_up_fare": {
+                "user": 0,
+                "role": 0,
+                "airline": 0,
+                "cabin": 0,
+                "total": 0
+              },
+              "mark_down_fare": {
+                "user": 0,
+                "role": 0,
+                "airline": 0,
+                "cabin": 0,
+                "total": 0
+              },
+              "vat": 0,
+              "total_fare": 314506
+            }
+          }
+        },
+        {
+          "origin_destinations": [
+            {
+              "ref_number": "0",
+              "direction_id": "0",
+              "elapsed_time": "1015",
+              "segments": [
+                {
+                  "departure": {
+                    "date": "2019-12-24",
+                    "time": "13:40:00",
+                    "airport": {
+                      "code": "LOS",
+                      "name": "Lagos-Murtala Muhammed Intl, Nigeria",
+                      "city_code": "",
+                      "city_name": "Lagos",
+                      "country_code": "NG",
+                      "country_name": "Nigeria",
+                      "terminal": "I"
+                    }
+                  },
+                  "arrival": {
+                    "date": "2019-12-24",
+                    "time": "21:00:00",
+                    "airport": {
+                      "code": "ADD",
+                      "name": "Addis Ababa-Bole Intl, Ethiopia",
+                      "city_code": "",
+                      "city_name": "Addis Ababa",
+                      "country_code": "ET",
+                      "country_name": "Ethiopia",
+                      "terminal": "I"
+                    }
+                  },
+                  "flight_number": "900",
+                  "res_book_desig_code": "H",
+                  "flight_duration": "",
+                  "operating_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "equipment": {
+                    "code": "77W",
+                    "name": "Boeing 777-300Er"
+                  },
+                  "marketing_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "baggage": [],
+                  "cabins": [
+                    {
+                      "rph": "ADT",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    },
+                    {
+                      "rph": "CHD",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    }
+                  ]
+                },
+                {
+                  "departure": {
+                    "date": "2019-12-24",
+                    "time": "21:45:00",
+                    "airport": {
+                      "code": "ADD",
+                      "name": "Addis Ababa-Bole Intl, Ethiopia",
+                      "city_code": "",
+                      "city_name": "Addis Ababa",
+                      "country_code": "ET",
+                      "country_name": "Ethiopia",
+                      "terminal": "2"
+                    }
+                  },
+                  "arrival": {
+                    "date": "2019-12-25",
+                    "time": "02:55:00",
+                    "airport": {
+                      "code": "DXB",
+                      "name": "Dubai-Dubai Intl, United Arab Emirates",
+                      "city_code": "",
+                      "city_name": "Dubai",
+                      "country_code": "AE",
+                      "country_name": "United Arab Emirates",
+                      "terminal": "2"
+                    }
+                  },
+                  "flight_number": "600",
+                  "res_book_desig_code": "H",
+                  "flight_duration": "",
+                  "operating_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "equipment": {
+                    "code": "77L",
+                    "name": "Boeing 777-200Lr"
+                  },
+                  "marketing_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "baggage": [],
+                  "cabins": [
+                    {
+                      "rph": "ADT",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    },
+                    {
+                      "rph": "CHD",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    }
+                  ]
+                }
+              ],
+              "option_pricing_info": ""
+            }
+          ],
+          "validating_airline_code": "ET",
+          "combination_id": "0",
+          "sequence_number": "1",
+          "cabin": {
+            "code": "M",
+            "name": "Economy"
+          },
+          "pricing": {
+            "provider": {
+              "currency": {
+                "code": "NGN",
+                "unit": "naira",
+                "decimal": 0
+              },
+              "base_fare": "149593",
+              "mark_up_fare": "0",
+              "total_fare": "325916",
+              "fare_break_down": [
+                {
+                  "passenger": {
+                    "code": "ADT",
+                    "quantity": "1"
+                  },
+                  "provider_fare": {
+                    "base": "85482",
+                    "taxes": [
+                      "88696"
+                    ],
+                    "total": "174178"
+                  },
+                  "ticket_designator": [
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "PENALTY APPLIES|"
+                    },
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "LAST TKT DTE|24DEC19| - DATE OF ORIGIN|"
+                    }
+                  ]
+                },
+                {
+                  "passenger": {
+                    "code": "CHD",
+                    "quantity": "1"
+                  },
+                  "provider_fare": {
+                    "base": "64111",
+                    "taxes": [
+                      "87627"
+                    ],
+                    "total": "151738"
+                  },
+                  "ticket_designator": [
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "PENALTY APPLIES|"
+                    },
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "LAST TKT DTE|24DEC19| - DATE OF ORIGIN|"
+                    }
+                  ]
+                }
+              ]
+            },
+            "portal_fare": {
+              "currency": {
+                "code": "NGN",
+                "unit": "naira",
+                "decimal": 0
+              },
+              "base_fare": "325916",
+              "mark_up_fare": {
+                "user": 0,
+                "role": 0,
+                "airline": 0,
+                "cabin": 0,
+                "total": 0
+              },
+              "mark_down_fare": {
+                "user": 0,
+                "role": 0,
+                "airline": 0,
+                "cabin": 0,
+                "total": 0
+              },
+              "vat": 0,
+              "total_fare": 325916
+            }
+          }
+        },
+        {
+          "origin_destinations": [
+            {
+              "ref_number": "1",
+              "direction_id": "0",
+              "elapsed_time": "1015",
+              "segments": [
+                {
+                  "departure": {
+                    "date": "2019-12-25",
+                    "time": "13:40:00",
+                    "airport": {
+                      "code": "LOS",
+                      "name": "Lagos-Murtala Muhammed Intl, Nigeria",
+                      "city_code": "",
+                      "city_name": "Lagos",
+                      "country_code": "NG",
+                      "country_name": "Nigeria",
+                      "terminal": "I"
+                    }
+                  },
+                  "arrival": {
+                    "date": "2019-12-25",
+                    "time": "21:00:00",
+                    "airport": {
+                      "code": "ADD",
+                      "name": "Addis Ababa-Bole Intl, Ethiopia",
+                      "city_code": "",
+                      "city_name": "Addis Ababa",
+                      "country_code": "ET",
+                      "country_name": "Ethiopia",
+                      "terminal": "I"
+                    }
+                  },
+                  "flight_number": "900",
+                  "res_book_desig_code": "H",
+                  "flight_duration": "",
+                  "operating_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "equipment": {
+                    "code": "77W",
+                    "name": "Boeing 777-300Er"
+                  },
+                  "marketing_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "baggage": [],
+                  "cabins": [
+                    {
+                      "rph": "ADT",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    },
+                    {
+                      "rph": "CHD",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    }
+                  ]
+                },
+                {
+                  "departure": {
+                    "date": "2019-12-25",
+                    "time": "21:45:00",
+                    "airport": {
+                      "code": "ADD",
+                      "name": "Addis Ababa-Bole Intl, Ethiopia",
+                      "city_code": "",
+                      "city_name": "Addis Ababa",
+                      "country_code": "ET",
+                      "country_name": "Ethiopia",
+                      "terminal": "2"
+                    }
+                  },
+                  "arrival": {
+                    "date": "2019-12-26",
+                    "time": "02:55:00",
+                    "airport": {
+                      "code": "DXB",
+                      "name": "Dubai-Dubai Intl, United Arab Emirates",
+                      "city_code": "",
+                      "city_name": "Dubai",
+                      "country_code": "AE",
+                      "country_name": "United Arab Emirates",
+                      "terminal": "2"
+                    }
+                  },
+                  "flight_number": "600",
+                  "res_book_desig_code": "H",
+                  "flight_duration": "",
+                  "operating_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "equipment": {
+                    "code": "77L",
+                    "name": "Boeing 777-200Lr"
+                  },
+                  "marketing_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "baggage": [],
+                  "cabins": [
+                    {
+                      "rph": "ADT",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    },
+                    {
+                      "rph": "CHD",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    }
+                  ]
+                }
+              ],
+              "option_pricing_info": ""
+            }
+          ],
+          "validating_airline_code": "ET",
+          "combination_id": "1",
+          "sequence_number": "1",
+          "cabin": {
+            "code": "M",
+            "name": "Economy"
+          },
+          "pricing": {
+            "provider": {
+              "currency": {
+                "code": "NGN",
+                "unit": "naira",
+                "decimal": 0
+              },
+              "base_fare": "149593",
+              "mark_up_fare": "0",
+              "total_fare": "325916",
+              "fare_break_down": [
+                {
+                  "passenger": {
+                    "code": "ADT",
+                    "quantity": "1"
+                  },
+                  "provider_fare": {
+                    "base": "85482",
+                    "taxes": [
+                      "88696"
+                    ],
+                    "total": "174178"
+                  },
+                  "ticket_designator": [
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "PENALTY APPLIES|"
+                    },
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "LAST TKT DTE|24DEC19| - DATE OF ORIGIN|"
+                    }
+                  ]
+                },
+                {
+                  "passenger": {
+                    "code": "CHD",
+                    "quantity": "1"
+                  },
+                  "provider_fare": {
+                    "base": "64111",
+                    "taxes": [
+                      "87627"
+                    ],
+                    "total": "151738"
+                  },
+                  "ticket_designator": [
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "PENALTY APPLIES|"
+                    },
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "LAST TKT DTE|24DEC19| - DATE OF ORIGIN|"
+                    }
+                  ]
+                }
+              ]
+            },
+            "portal_fare": {
+              "currency": {
+                "code": "NGN",
+                "unit": "naira",
+                "decimal": 0
+              },
+              "base_fare": "325916",
+              "mark_up_fare": {
+                "user": 0,
+                "role": 0,
+                "airline": 0,
+                "cabin": 0,
+                "total": 0
+              },
+              "mark_down_fare": {
+                "user": 0,
+                "role": 0,
+                "airline": 0,
+                "cabin": 0,
+                "total": 0
+              },
+              "vat": 0,
+              "total_fare": 325916
+            }
+          }
+        },
+        {
+          "origin_destinations": [
+            {
+              "ref_number": "2",
+              "direction_id": "0",
+              "elapsed_time": "1015",
+              "segments": [
+                {
+                  "departure": {
+                    "date": "2019-12-26",
+                    "time": "13:40:00",
+                    "airport": {
+                      "code": "LOS",
+                      "name": "Lagos-Murtala Muhammed Intl, Nigeria",
+                      "city_code": "",
+                      "city_name": "Lagos",
+                      "country_code": "NG",
+                      "country_name": "Nigeria",
+                      "terminal": "I"
+                    }
+                  },
+                  "arrival": {
+                    "date": "2019-12-26",
+                    "time": "21:00:00",
+                    "airport": {
+                      "code": "ADD",
+                      "name": "Addis Ababa-Bole Intl, Ethiopia",
+                      "city_code": "",
+                      "city_name": "Addis Ababa",
+                      "country_code": "ET",
+                      "country_name": "Ethiopia",
+                      "terminal": "I"
+                    }
+                  },
+                  "flight_number": "900",
+                  "res_book_desig_code": "H",
+                  "flight_duration": "",
+                  "operating_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "equipment": {
+                    "code": "77W",
+                    "name": "Boeing 777-300Er"
+                  },
+                  "marketing_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "baggage": [],
+                  "cabins": [
+                    {
+                      "rph": "ADT",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    },
+                    {
+                      "rph": "CHD",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    }
+                  ]
+                },
+                {
+                  "departure": {
+                    "date": "2019-12-26",
+                    "time": "21:45:00",
+                    "airport": {
+                      "code": "ADD",
+                      "name": "Addis Ababa-Bole Intl, Ethiopia",
+                      "city_code": "",
+                      "city_name": "Addis Ababa",
+                      "country_code": "ET",
+                      "country_name": "Ethiopia",
+                      "terminal": "2"
+                    }
+                  },
+                  "arrival": {
+                    "date": "2019-12-27",
+                    "time": "02:55:00",
+                    "airport": {
+                      "code": "DXB",
+                      "name": "Dubai-Dubai Intl, United Arab Emirates",
+                      "city_code": "",
+                      "city_name": "Dubai",
+                      "country_code": "AE",
+                      "country_name": "United Arab Emirates",
+                      "terminal": "2"
+                    }
+                  },
+                  "flight_number": "600",
+                  "res_book_desig_code": "H",
+                  "flight_duration": "",
+                  "operating_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "equipment": {
+                    "code": "77L",
+                    "name": "Boeing 777-200Lr"
+                  },
+                  "marketing_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "baggage": [],
+                  "cabins": [
+                    {
+                      "rph": "ADT",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    },
+                    {
+                      "rph": "CHD",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    }
+                  ]
+                }
+              ],
+              "option_pricing_info": ""
+            }
+          ],
+          "validating_airline_code": "ET",
+          "combination_id": "2",
+          "sequence_number": "1",
+          "cabin": {
+            "code": "M",
+            "name": "Economy"
+          },
+          "pricing": {
+            "provider": {
+              "currency": {
+                "code": "NGN",
+                "unit": "naira",
+                "decimal": 0
+              },
+              "base_fare": "149593",
+              "mark_up_fare": "0",
+              "total_fare": "325916",
+              "fare_break_down": [
+                {
+                  "passenger": {
+                    "code": "ADT",
+                    "quantity": "1"
+                  },
+                  "provider_fare": {
+                    "base": "85482",
+                    "taxes": [
+                      "88696"
+                    ],
+                    "total": "174178"
+                  },
+                  "ticket_designator": [
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "PENALTY APPLIES|"
+                    },
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "LAST TKT DTE|24DEC19| - DATE OF ORIGIN|"
+                    }
+                  ]
+                },
+                {
+                  "passenger": {
+                    "code": "CHD",
+                    "quantity": "1"
+                  },
+                  "provider_fare": {
+                    "base": "64111",
+                    "taxes": [
+                      "87627"
+                    ],
+                    "total": "151738"
+                  },
+                  "ticket_designator": [
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "PENALTY APPLIES|"
+                    },
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "LAST TKT DTE|24DEC19| - DATE OF ORIGIN|"
+                    }
+                  ]
+                }
+              ]
+            },
+            "portal_fare": {
+              "currency": {
+                "code": "NGN",
+                "unit": "naira",
+                "decimal": 0
+              },
+              "base_fare": "325916",
+              "mark_up_fare": {
+                "user": 0,
+                "role": 0,
+                "airline": 0,
+                "cabin": 0,
+                "total": 0
+              },
+              "mark_down_fare": {
+                "user": 0,
+                "role": 0,
+                "airline": 0,
+                "cabin": 0,
+                "total": 0
+              },
+              "vat": 0,
+              "total_fare": 325916
+            }
+          }
+        },
+        {
+          "origin_destinations": [
+            {
+              "ref_number": "3",
+              "direction_id": "0",
+              "elapsed_time": "1015",
+              "segments": [
+                {
+                  "departure": {
+                    "date": "2019-12-27",
+                    "time": "13:40:00",
+                    "airport": {
+                      "code": "LOS",
+                      "name": "Lagos-Murtala Muhammed Intl, Nigeria",
+                      "city_code": "",
+                      "city_name": "Lagos",
+                      "country_code": "NG",
+                      "country_name": "Nigeria",
+                      "terminal": "I"
+                    }
+                  },
+                  "arrival": {
+                    "date": "2019-12-27",
+                    "time": "21:00:00",
+                    "airport": {
+                      "code": "ADD",
+                      "name": "Addis Ababa-Bole Intl, Ethiopia",
+                      "city_code": "",
+                      "city_name": "Addis Ababa",
+                      "country_code": "ET",
+                      "country_name": "Ethiopia",
+                      "terminal": "I"
+                    }
+                  },
+                  "flight_number": "900",
+                  "res_book_desig_code": "H",
+                  "flight_duration": "",
+                  "operating_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "equipment": {
+                    "code": "77W",
+                    "name": "Boeing 777-300Er"
+                  },
+                  "marketing_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "baggage": [],
+                  "cabins": [
+                    {
+                      "rph": "ADT",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    },
+                    {
+                      "rph": "CHD",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    }
+                  ]
+                },
+                {
+                  "departure": {
+                    "date": "2019-12-27",
+                    "time": "21:45:00",
+                    "airport": {
+                      "code": "ADD",
+                      "name": "Addis Ababa-Bole Intl, Ethiopia",
+                      "city_code": "",
+                      "city_name": "Addis Ababa",
+                      "country_code": "ET",
+                      "country_name": "Ethiopia",
+                      "terminal": "2"
+                    }
+                  },
+                  "arrival": {
+                    "date": "2019-12-28",
+                    "time": "02:55:00",
+                    "airport": {
+                      "code": "DXB",
+                      "name": "Dubai-Dubai Intl, United Arab Emirates",
+                      "city_code": "",
+                      "city_name": "Dubai",
+                      "country_code": "AE",
+                      "country_name": "United Arab Emirates",
+                      "terminal": "2"
+                    }
+                  },
+                  "flight_number": "600",
+                  "res_book_desig_code": "H",
+                  "flight_duration": "",
+                  "operating_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "equipment": {
+                    "code": "77L",
+                    "name": "Boeing 777-200Lr"
+                  },
+                  "marketing_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "baggage": [],
+                  "cabins": [
+                    {
+                      "rph": "ADT",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    },
+                    {
+                      "rph": "CHD",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    }
+                  ]
+                }
+              ],
+              "option_pricing_info": ""
+            }
+          ],
+          "validating_airline_code": "ET",
+          "combination_id": "3",
+          "sequence_number": "1",
+          "cabin": {
+            "code": "M",
+            "name": "Economy"
+          },
+          "pricing": {
+            "provider": {
+              "currency": {
+                "code": "NGN",
+                "unit": "naira",
+                "decimal": 0
+              },
+              "base_fare": "149593",
+              "mark_up_fare": "0",
+              "total_fare": "325916",
+              "fare_break_down": [
+                {
+                  "passenger": {
+                    "code": "ADT",
+                    "quantity": "1"
+                  },
+                  "provider_fare": {
+                    "base": "85482",
+                    "taxes": [
+                      "88696"
+                    ],
+                    "total": "174178"
+                  },
+                  "ticket_designator": [
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "PENALTY APPLIES|"
+                    },
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "LAST TKT DTE|24DEC19| - DATE OF ORIGIN|"
+                    }
+                  ]
+                },
+                {
+                  "passenger": {
+                    "code": "CHD",
+                    "quantity": "1"
+                  },
+                  "provider_fare": {
+                    "base": "64111",
+                    "taxes": [
+                      "87627"
+                    ],
+                    "total": "151738"
+                  },
+                  "ticket_designator": [
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "PENALTY APPLIES|"
+                    },
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "LAST TKT DTE|24DEC19| - DATE OF ORIGIN|"
+                    }
+                  ]
+                }
+              ]
+            },
+            "portal_fare": {
+              "currency": {
+                "code": "NGN",
+                "unit": "naira",
+                "decimal": 0
+              },
+              "base_fare": "325916",
+              "mark_up_fare": {
+                "user": 0,
+                "role": 0,
+                "airline": 0,
+                "cabin": 0,
+                "total": 0
+              },
+              "mark_down_fare": {
+                "user": 0,
+                "role": 0,
+                "airline": 0,
+                "cabin": 0,
+                "total": 0
+              },
+              "vat": 0,
+              "total_fare": 325916
+            }
+          }
+        },
+        {
+          "origin_destinations": [
+            {
+              "ref_number": "4",
+              "direction_id": "0",
+              "elapsed_time": "1015",
+              "segments": [
+                {
+                  "departure": {
+                    "date": "2019-12-28",
+                    "time": "13:40:00",
+                    "airport": {
+                      "code": "LOS",
+                      "name": "Lagos-Murtala Muhammed Intl, Nigeria",
+                      "city_code": "",
+                      "city_name": "Lagos",
+                      "country_code": "NG",
+                      "country_name": "Nigeria",
+                      "terminal": "I"
+                    }
+                  },
+                  "arrival": {
+                    "date": "2019-12-28",
+                    "time": "21:00:00",
+                    "airport": {
+                      "code": "ADD",
+                      "name": "Addis Ababa-Bole Intl, Ethiopia",
+                      "city_code": "",
+                      "city_name": "Addis Ababa",
+                      "country_code": "ET",
+                      "country_name": "Ethiopia",
+                      "terminal": "I"
+                    }
+                  },
+                  "flight_number": "900",
+                  "res_book_desig_code": "H",
+                  "flight_duration": "",
+                  "operating_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "equipment": {
+                    "code": "77W",
+                    "name": "Boeing 777-300Er"
+                  },
+                  "marketing_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "baggage": [],
+                  "cabins": [
+                    {
+                      "rph": "ADT",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    },
+                    {
+                      "rph": "CHD",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    }
+                  ]
+                },
+                {
+                  "departure": {
+                    "date": "2019-12-28",
+                    "time": "21:45:00",
+                    "airport": {
+                      "code": "ADD",
+                      "name": "Addis Ababa-Bole Intl, Ethiopia",
+                      "city_code": "",
+                      "city_name": "Addis Ababa",
+                      "country_code": "ET",
+                      "country_name": "Ethiopia",
+                      "terminal": "2"
+                    }
+                  },
+                  "arrival": {
+                    "date": "2019-12-29",
+                    "time": "02:55:00",
+                    "airport": {
+                      "code": "DXB",
+                      "name": "Dubai-Dubai Intl, United Arab Emirates",
+                      "city_code": "",
+                      "city_name": "Dubai",
+                      "country_code": "AE",
+                      "country_name": "United Arab Emirates",
+                      "terminal": "2"
+                    }
+                  },
+                  "flight_number": "600",
+                  "res_book_desig_code": "H",
+                  "flight_duration": "",
+                  "operating_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "equipment": {
+                    "code": "77L",
+                    "name": "Boeing 777-200Lr"
+                  },
+                  "marketing_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "baggage": [],
+                  "cabins": [
+                    {
+                      "rph": "ADT",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    },
+                    {
+                      "rph": "CHD",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    }
+                  ]
+                }
+              ],
+              "option_pricing_info": ""
+            }
+          ],
+          "validating_airline_code": "ET",
+          "combination_id": "4",
+          "sequence_number": "1",
+          "cabin": {
+            "code": "M",
+            "name": "Economy"
+          },
+          "pricing": {
+            "provider": {
+              "currency": {
+                "code": "NGN",
+                "unit": "naira",
+                "decimal": 0
+              },
+              "base_fare": "149593",
+              "mark_up_fare": "0",
+              "total_fare": "325916",
+              "fare_break_down": [
+                {
+                  "passenger": {
+                    "code": "ADT",
+                    "quantity": "1"
+                  },
+                  "provider_fare": {
+                    "base": "85482",
+                    "taxes": [
+                      "88696"
+                    ],
+                    "total": "174178"
+                  },
+                  "ticket_designator": [
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "PENALTY APPLIES|"
+                    },
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "LAST TKT DTE|24DEC19| - DATE OF ORIGIN|"
+                    }
+                  ]
+                },
+                {
+                  "passenger": {
+                    "code": "CHD",
+                    "quantity": "1"
+                  },
+                  "provider_fare": {
+                    "base": "64111",
+                    "taxes": [
+                      "87627"
+                    ],
+                    "total": "151738"
+                  },
+                  "ticket_designator": [
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "PENALTY APPLIES|"
+                    },
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "LAST TKT DTE|24DEC19| - DATE OF ORIGIN|"
+                    }
+                  ]
+                }
+              ]
+            },
+            "portal_fare": {
+              "currency": {
+                "code": "NGN",
+                "unit": "naira",
+                "decimal": 0
+              },
+              "base_fare": "325916",
+              "mark_up_fare": {
+                "user": 0,
+                "role": 0,
+                "airline": 0,
+                "cabin": 0,
+                "total": 0
+              },
+              "mark_down_fare": {
+                "user": 0,
+                "role": 0,
+                "airline": 0,
+                "cabin": 0,
+                "total": 0
+              },
+              "vat": 0,
+              "total_fare": 325916
+            }
+          }
+        },
+        {
+          "origin_destinations": [
+            {
+              "ref_number": "5",
+              "direction_id": "0",
+              "elapsed_time": "1015",
+              "segments": [
+                {
+                  "departure": {
+                    "date": "2019-12-29",
+                    "time": "13:40:00",
+                    "airport": {
+                      "code": "LOS",
+                      "name": "Lagos-Murtala Muhammed Intl, Nigeria",
+                      "city_code": "",
+                      "city_name": "Lagos",
+                      "country_code": "NG",
+                      "country_name": "Nigeria",
+                      "terminal": "I"
+                    }
+                  },
+                  "arrival": {
+                    "date": "2019-12-29",
+                    "time": "21:00:00",
+                    "airport": {
+                      "code": "ADD",
+                      "name": "Addis Ababa-Bole Intl, Ethiopia",
+                      "city_code": "",
+                      "city_name": "Addis Ababa",
+                      "country_code": "ET",
+                      "country_name": "Ethiopia",
+                      "terminal": "I"
+                    }
+                  },
+                  "flight_number": "900",
+                  "res_book_desig_code": "H",
+                  "flight_duration": "",
+                  "operating_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "equipment": {
+                    "code": "77W",
+                    "name": "Boeing 777-300Er"
+                  },
+                  "marketing_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "baggage": [],
+                  "cabins": [
+                    {
+                      "rph": "ADT",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    },
+                    {
+                      "rph": "CHD",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    }
+                  ]
+                },
+                {
+                  "departure": {
+                    "date": "2019-12-29",
+                    "time": "21:45:00",
+                    "airport": {
+                      "code": "ADD",
+                      "name": "Addis Ababa-Bole Intl, Ethiopia",
+                      "city_code": "",
+                      "city_name": "Addis Ababa",
+                      "country_code": "ET",
+                      "country_name": "Ethiopia",
+                      "terminal": "2"
+                    }
+                  },
+                  "arrival": {
+                    "date": "2019-12-30",
+                    "time": "02:55:00",
+                    "airport": {
+                      "code": "DXB",
+                      "name": "Dubai-Dubai Intl, United Arab Emirates",
+                      "city_code": "",
+                      "city_name": "Dubai",
+                      "country_code": "AE",
+                      "country_name": "United Arab Emirates",
+                      "terminal": "2"
+                    }
+                  },
+                  "flight_number": "600",
+                  "res_book_desig_code": "H",
+                  "flight_duration": "",
+                  "operating_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "equipment": {
+                    "code": "77L",
+                    "name": "Boeing 777-200Lr"
+                  },
+                  "marketing_airline": {
+                    "code": "ET",
+                    "name": "Ethiopian Airlines"
+                  },
+                  "baggage": [],
+                  "cabins": [
+                    {
+                      "rph": "ADT",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    },
+                    {
+                      "rph": "CHD",
+                      "res_book_desig_cabin_code": "M",
+                      "res_book_desig_cabin_name": "Economy"
+                    }
+                  ]
+                }
+              ],
+              "option_pricing_info": ""
+            }
+          ],
+          "validating_airline_code": "ET",
+          "combination_id": "5",
+          "sequence_number": "1",
+          "cabin": {
+            "code": "M",
+            "name": "Economy"
+          },
+          "pricing": {
+            "provider": {
+              "currency": {
+                "code": "NGN",
+                "unit": "naira",
+                "decimal": 0
+              },
+              "base_fare": "149593",
+              "mark_up_fare": "0",
+              "total_fare": "325916",
+              "fare_break_down": [
+                {
+                  "passenger": {
+                    "code": "ADT",
+                    "quantity": "1"
+                  },
+                  "provider_fare": {
+                    "base": "85482",
+                    "taxes": [
+                      "88696"
+                    ],
+                    "total": "174178"
+                  },
+                  "ticket_designator": [
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "PENALTY APPLIES|"
+                    },
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "LAST TKT DTE|24DEC19| - DATE OF ORIGIN|"
+                    }
+                  ]
+                },
+                {
+                  "passenger": {
+                    "code": "CHD",
+                    "quantity": "1"
+                  },
+                  "provider_fare": {
+                    "base": "64111",
+                    "taxes": [
+                      "87627"
+                    ],
+                    "total": "151738"
+                  },
+                  "ticket_designator": [
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "PENALTY APPLIES|"
+                    },
+                    {
+                      "ticket_designator_code": "|",
+                      "ticket_designator_extension": "LAST TKT DTE|24DEC19| - DATE OF ORIGIN|"
+                    }
+                  ]
+                }
+              ]
+            },
+            "portal_fare": {
+              "currency": {
+                "code": "NGN",
+                "unit": "naira",
+                "decimal": 0
+              },
+              "base_fare": "325916",
+              "mark_up_fare": {
+                "user": 0,
+                "role": 0,
+                "airline": 0,
+                "cabin": 0,
+                "total": 0
+              },
+              "mark_down_fare": {
+                "user": 0,
+                "role": 0,
+                "airline": 0,
+                "cabin": 0,
+                "total": 0
+              },
+              "vat": 0,
+              "total_fare": 325916
+            }
+          }
+        }
+      ],
+      "one_way_combinable_fares": []
+    },
+    "additional_message": [
+      "Do not make use of the result in the response_from_provider_node. Its only there for the API testing purpose. It will be stripped off on completion of the API",
+      "Please call the getNextflightResult endpoint is has_more_result = true"
+    ]
+  }
+}

@@ -277,7 +277,7 @@ function datePickers() {
 
 
     $('.datePickerStart').datetimepicker({
-        format: 'ddd M/D'
+        format: 'MM/DD/YYYY'
     }).on('dp.change', function(e){
         var parent = $($(this).parents('.row')[0]),
             endDate = parent.find('.datePickerEnd');
@@ -285,7 +285,7 @@ function datePickers() {
     });
 
     $('.datePickerEnd').datetimepicker({
-        format: 'ddd M/D',
+        format: 'MM/DD/YYYY',
         useCurrent: false
     }).on('dp.change', function(e){
         var parent = $($(this).parents('.row')[0]),
