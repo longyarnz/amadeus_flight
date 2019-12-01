@@ -62,15 +62,15 @@
                   <h1 class="theme-search-area-title">Cheap Flights Best Deals</h1>
                   <p class="theme-search-area-subtitle">Search hundreds of travel sites at once.</p>
                 </div>
-                <form action="POST">
+                <form action="POST" autocomplete="off">
                   <div class="theme-search-area-form" id="hero-search-form">
                     <div class="row" data-gutter="none">
                       <div class="col-md-3 ">
                         <div class="theme-search-area-section first theme-search-area-section-curved">
                           <div class="theme-search-area-section-inner">
                             <i class="theme-search-area-section-icon lin lin-location-pin"></i>
-                            <input class="theme-search-area-section-input typeahead" type="text"
-                              placeholder="Departure City" data-provide="typeahead" />
+                            <input required autocomplete="off" class="theme-search-area-section-input typeahead" type="text"
+                              placeholder="Departure City" data-provide="typeahead" name="departure" />
                           </div>
                         </div>
                       </div>
@@ -78,8 +78,8 @@
                         <div class="theme-search-area-section theme-search-area-section-curved">
                           <div class="theme-search-area-section-inner">
                             <i class="theme-search-area-section-icon lin lin-location-pin"></i>
-                            <input class="theme-search-area-section-input typeahead" type="text"
-                              placeholder="Destination City" data-provide="typeahead" />
+                            <input required autocomplete="off" class="theme-search-area-section-input typeahead" type="text"
+                              placeholder="Destination City" data-provide="typeahead" name="destination" />
                           </div>
                         </div>
                       </div>
@@ -87,10 +87,9 @@
                         <div class="theme-search-area-section theme-search-area-section-curved">
                           <div class="theme-search-area-section-inner">
                             <i class="theme-search-area-section-icon lin lin-calendar"></i>
-                            <input class="theme-search-area-section-input datePickerStart _mob-h"
-                              type="text" placeholder="Departure Date" />
-                            <input class="theme-search-area-section-input _desk-h mobile-picker"
-                              type="date" />
+                            <input required class="theme-search-area-section-input datePickerStart _mob-h" type="text" name="depart"
+                              placeholder="Departure Date" />
+                            <input class="theme-search-area-section-input _desk-h mobile-picker" type="date" />
                           </div>
                         </div>
                       </div>
@@ -98,10 +97,9 @@
                         <div class="theme-search-area-section theme-search-area-section-curved">
                           <div class="theme-search-area-section-inner add-border-right">
                             <i class="theme-search-area-section-icon lin lin-calendar"></i>
-                            <input class="theme-search-area-section-input datePickerEnd _mob-h"
-                              type="text" placeholder="Return Date" />
-                            <input class="theme-search-area-section-input _desk-h mobile-picker"
-                              type="date" />
+                            <input required class="theme-search-area-section-input datePickerEnd _mob-h" type="text" name="return"
+                              placeholder="Return Date" />
+                            <input class="theme-search-area-section-input _desk-h mobile-picker" type="date" />
                           </div>
                         </div>
                       </div>
@@ -115,7 +113,7 @@
                             <i class="theme-search-area-section-icon lin lin-badge"></i>
                             <div class="theme-payment-page-form-item form-group">
                               <i class="fa fa-angle-down"></i>
-                              <select class="form-control add-left-padding">
+                              <select class="form-control add-left-padding" name="cabin">
                                 <option value="false">Select your preferred cabin</option>
                                 <option value="business">Business</option>
                                 <option value="economy">Economy</option>
@@ -125,10 +123,11 @@
                         </div>
                       </div>
                       <div class="col-md-3 ">
-                        <div class="theme-search-area-section theme-search-area-section-curved quantity-selector" data-increment="Adults">
+                        <div class="theme-search-area-section theme-search-area-section-curved quantity-selector"
+                          data-increment="Adults">
                           <div class="theme-search-area-section-inner">
                             <i class="theme-search-area-section-icon lin lin-people"></i>
-                            <input class="theme-search-area-section-input" value="0 Adult" type="text" />
+                            <input required autocomplete="off" class="theme-search-area-section-input" value="0 Adult" type="text" name="adults" pattern="[1-9][\d]* Adult[s]?" />
                             <div class="quantity-selector-box" id="FlySearchPassengers">
                               <div class="quantity-selector-inner">
                                 <p class="quantity-selector-title">Adults >12 yrs</p>
@@ -147,10 +146,11 @@
                         </div>
                       </div>
                       <div class="col-md-3 ">
-                        <div class="theme-search-area-section theme-search-area-section-curved quantity-selector" data-increment="Children">
+                        <div class="theme-search-area-section theme-search-area-section-curved quantity-selector"
+                          data-increment="Children">
                           <div class="theme-search-area-section-inner">
                             <i class="theme-search-area-section-icon lin lin-people"></i>
-                            <input class="theme-search-area-section-input" value="0 Child" type="text" />
+                            <input required autocomplete="off" class="theme-search-area-section-input" value="0 Child" type="text" name="children" />
                             <div class="quantity-selector-box" id="FlySearchPassengers">
                               <div class="quantity-selector-inner">
                                 <p class="quantity-selector-title">Children 2-12 yrs</p>
@@ -169,10 +169,11 @@
                         </div>
                       </div>
                       <div class="col-md-3 ">
-                        <div class="theme-search-area-section theme-search-area-section-curved quantity-selector" data-increment="Infants">
+                        <div class="theme-search-area-section theme-search-area-section-curved quantity-selector"
+                          data-increment="Infants">
                           <div class="theme-search-area-section-inner add-border-right">
                             <i class="theme-search-area-section-icon lin lin-people"></i>
-                            <input class="theme-search-area-section-input" value="0 Infant" type="text" />
+                            <input required autocomplete="off" class="theme-search-area-section-input" value="0 Infant" type="text" name="infants" />
                             <div class="quantity-selector-box" id="FlySearchPassengers">
                               <div class="quantity-selector-inner">
                                 <p class="quantity-selector-title">Infants 0-2 yrs</p>
@@ -195,15 +196,16 @@
                   <div class="theme-search-area-options theme-search-area-options-dot-primary-inverse clearfix">
                     <div class="btn-group theme-search-area-options-list" data-toggle="buttons">
                       <label class="btn btn-primary active">
-                        <input type="radio" name="flight-options" id="flight-option-1" checked />Round Trip
+                        <input required autocomplete="off" type="radio" name="flight-options" id="flight-option-1" checked />Round Trip
                       </label>
                       <label class="btn btn-primary">
-                        <input type="radio" name="flight-options" id="flight-option-2" />One Way
+                        <input required autocomplete="off" type="radio" name="flight-options" id="flight-option-2" />One Way
                       </label>
                     </div>
                   </div>
                   <div class="search-button">
-                    <button class="theme-search-area-submit _mt-0 theme-search-area-submit-no-border theme-search-area-submit-curved">
+                    <button type="submit"
+                      class="theme-search-area-submit _mt-0 theme-search-area-submit-no-border theme-search-area-submit-curved">
                       Search
                     </button>
                   </div>
@@ -272,6 +274,7 @@
   <script src="js/fitvid.js"></script>
   <script src="js/youtube-bg.js"></script>
   <script src="js/custom.js"></script>
+  <script src="js/form.js"></script>
 </body>
 
 </html>
