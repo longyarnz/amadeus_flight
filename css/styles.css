@@ -14589,3 +14589,13 @@ input {
 .load-more {
   display: none;
 }
+.thumbs-up {
+  font-size: 1000%;
+  text-align: center;
+  animation: blink linear 1s infinite;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  height: calc(100vh - 500px);
+}
