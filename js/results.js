@@ -32,8 +32,7 @@ function renderFlightData() {
 }
 
 function renderStopsDetails(html, stops) {
-  const stopsHTML = stops.map((flight, i) => {
-    if (i > 1) return;
+  const stopsHTML = stops.map(flight => {
     let markup = stopsMarkup;
     const departure = renderDepartureDetails(flight.departure);
     const arrival = renderDepartureDetails(flight.arrival);
@@ -45,7 +44,6 @@ function renderStopsDetails(html, stops) {
   }).join('');
 
   html = html.replace('{{stops_details}}', stopsHTML);
-
   return html;
 }
 
@@ -54,7 +52,7 @@ function renderDepartureDetails(departure) {
   markup = markup.replace('{{city}}', departure.city);
   markup = markup.replace('{{time}}', departure.time);
   markup = markup.replace('{{date}}', departure.date);
-  const daytime = parseInt(departure.date.slice(0, 2)) > 11 ? 'PM' : 'AM';
+  const daytime = parseInt(departure.time.slice(0, 2)) > 11 ? 'PM' : 'AM';
   markup = markup.replace('{{daytime}}', daytime);
   return markup;
 }
@@ -64,14 +62,17 @@ function renderAirportDetails({ departure, arrival }) {
   markup = markup.replace('{{departure_code}}', departure.code);
   markup = markup.replace('{{arrival_code}}', arrival.code);
   const duration = getFlightDuration(departure, arrival);
-  markup = markup.replace('{{duration}}', `${duration}h`);
+  markup = markup.replace('{{duration}}', `${duration}`);
   return markup;
 }
 
 function getFlightDuration(D, A) {
   const departure = moment(`${D.date} ${D.time}`);
   const arrival = moment(`${A.date} ${A.time}`);
-  return arrival.diff(departure, 'hours');
+  const hours = arrival.diff(departure, 'hours', true);
+  const H = Math.floor(hours);
+  const minutes = Math.ceil((hours % H) * 60);
+  return `${H}h ${minutes}min`;
 }
 
 function renderAirlineDetails() {
