@@ -42,6 +42,7 @@ function renderFlightData(status = 200, start = 0) {
     markup = renderCabinDetails(markup, flight.cabin);
     markup = renderPriceDetails(markup, flight.price);
     $('.theme-search-results').append(markup);
+    $('.thumbs-up').hide();
     updateSearchTitleHeader('searched', limit);
     toggleLoadMoreButton(body.total, limit);
   });

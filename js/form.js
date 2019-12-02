@@ -172,8 +172,10 @@ async function sendRequest(inputs, cookie) {
     localStorage.setItem('amadeus_flight', JSON.stringify(flights.body));
     localStorage.setItem('amadeus_inputs', JSON.stringify(inputs));
     localStorage.setItem('amadeus_limit', 10);
-    populateFields(status);
-    renderFlightData(status);
+    if (!isNotResultPage) {
+      populateFields(status);
+      renderFlightData(status);
+    }
   }
   catch (err) {
     console.log(err);
@@ -186,6 +188,7 @@ async function sendRequest(inputs, cookie) {
     !isNotResultPage && $('.theme-loading').css('display', 'none');
     !isNotResultPage && $('.theme-page-section').css('display', 'block');
     localStorage.removeItem('amadeus_isSubmitting');
-    isNotResultPage && location.assign('results.html');
+    isNotResultPage && flights && flights.body && flights.body.data && location.assign('results.html');
+    isNotResultPage && flights && flights.body && !flights.body.data && updateSearchTitleHeader('failed');
   }
 }

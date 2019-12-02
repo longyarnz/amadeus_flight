@@ -67,9 +67,10 @@ function updateSearchTitleHeader(key, total = 0) {
   const titles = {
     searching: `Searching for flights from ${from} to ${to}.`,
     searched: `${total} flights from ${from} to ${to}.`,
-    failed: `No flights found. Try to search for other location`
+    failed: `No flights found. Try to search for other location at another time.`
   };
   $('.theme-search-area-title').html(titles[key]);
+  key === 'failed' && $('.thumbs-up').show();
 }
 
 
