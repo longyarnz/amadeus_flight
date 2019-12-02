@@ -5,7 +5,7 @@ function parseData(body) {
   const flights = itineraries.map(flight => {
     const price = flight.pricing.provider.total_fare;
     const cabin = flight.cabin.name;
-    const trip = flight.origin_destinations.map(origin => {
+    const trips = flight.origin_destinations.map(origin => {
       const stops = origin.segments.map(obj => {
         return {
           airline: obj.operating_airline.name,
@@ -28,12 +28,12 @@ function parseData(body) {
         stops,
         total: origin.segments.length
       }
-    })[0];
+    });
 
     return {
       price,
       cabin,
-      trip
+      trip: mergeTrips(trips)
     }
   });
 
@@ -41,4 +41,15 @@ function parseData(body) {
     flights,
     total: body.data.itineraries.length
   }
+}
+
+function mergeTrips(trips) {
+  if (trips.length === 2) {
+    trips = {
+      stops: trips[0].stops.concat(trips[1].stops),
+      total: trips[0].total + trips[1].total
+    }
+  }
+  else trips = trips[0];
+  return trips;
 }
