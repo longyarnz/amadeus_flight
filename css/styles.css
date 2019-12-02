@@ -14569,7 +14569,7 @@ option {
   height: 20px;
 }
 .add-full-page-height {
-  min-height: calc(100vh - 309px);
+  min-height: calc(100vh - 434px);
 }
 input {
   white-space: nowrap;

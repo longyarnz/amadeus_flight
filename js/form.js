@@ -32,8 +32,16 @@ function checksFail(check, element, key) {
 
 function getIATA(key, value) {
   if (/(destination_city|departure_city)/.test(key)) {
+    localStorage.setItem(key, value);
     const [, code] = value.split(', ');
     return code;
+  }
+  return value;
+}
+
+function getLocation(key, value) {
+  if (/(destination_city|departure_city)/.test(key)) {
+    value = localStorage.getItem(key);
   }
   return value;
 }
@@ -47,6 +55,18 @@ function extractSearchParams(key, value) {
   if (check) {
     const number = parseInt(value.split(' ')[0]);
     return number;
+  }
+  return value;
+}
+
+function populateParams(key, value) {
+  const check = /^[no_of_]/.test(key);
+  if (check) {
+    let text = key.slice(6);
+    text = text.startsWith('a') && value > 1 ? 'Adults' : text.startsWith('a') ? 'Adult' : text;
+    text = text.startsWith('c') && value > 1 ? 'Children' : text.startsWith('c') ? 'Child' : text;
+    text = text.startsWith('i') && value > 1 ? 'Infants' : text.startsWith('i') ? 'Infant' : text;
+    value = `${value} ${text}`;
   }
   return value;
 }
@@ -133,7 +153,7 @@ async function sendRequest(inputs, cookie) {
     console.log(flights);
     localStorage.setItem('amadeus_data', JSON.stringify(flights.body));
     localStorage.setItem('amadeus_inputs', JSON.stringify(inputs));
-    location.assign('results.html')
+    location.pathname !== '/results.html' && location.assign('results.html');
   }
   catch (err) {
     console.log(err)
