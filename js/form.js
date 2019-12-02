@@ -1,6 +1,15 @@
+const isNotResultPage = location.pathname !== '/results.html';
+
 $(document).ready(function () {
   $('form').submit(async function (e) {
     e.preventDefault();
+    const isSubmitting = localStorage.getItem('amadeus_isSubmitting') === 'true';
+    if (isSubmitting) return;
+    else {
+      localStorage.setItem('amadeus_isSubmitting', 'true');
+      $('form button').text('Searching...');
+    }
+
     const _this = $(this)[0];
     const form = new FormData(_this);
     const inputs = {};
@@ -153,7 +162,9 @@ async function sendRequest(inputs, cookie) {
     console.log(flights);
     localStorage.setItem('amadeus_data', JSON.stringify(flights.body));
     localStorage.setItem('amadeus_inputs', JSON.stringify(inputs));
-    location.pathname !== '/results.html' && location.assign('results.html');
+    localStorage.removeItem('amadeus_isSubmitting');
+    isNotResultPage && location.assign('results.html');
+    $('form button').text(isNotResultPage ? 'Search' : 'Edit');
   }
   catch (err) {
     console.log(err)
