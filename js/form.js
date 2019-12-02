@@ -152,8 +152,10 @@ async function sendRequest(inputs, cookie) {
     }
   });
 
+  let flights;
+
   try {
-    let flights = await fetch(URL, {
+    flights = await fetch(URL, {
       method: 'POST',
       body,
       headers: {
@@ -162,15 +164,17 @@ async function sendRequest(inputs, cookie) {
     });
     flights = await flights.json();
     console.log(flights);
-    localStorage.setItem('amadeus_data', JSON.stringify(flights.body));
+    localStorage.setItem('amadeus_flight', JSON.stringify(flights.body));
     localStorage.setItem('amadeus_inputs', JSON.stringify(inputs));
-    localStorage.removeItem('amadeus_isSubmitting');
-    isNotResultPage && location.assign('results.html');
+  }
+  catch (err) {
+    console.log(err);
+  }
+  finally {
     $('form button').text(isNotResultPage ? 'Search' : 'Edit');
     !isNotResultPage && $('.theme-loading').css('display', 'none');
     !isNotResultPage && $('.theme-page-section').css('display', 'block');
-  }
-  catch (err) {
-    console.log(err)
+    localStorage.removeItem('amadeus_isSubmitting');
+    isNotResultPage && flights && flights.body && location.assign('results.html');
   }
 }
