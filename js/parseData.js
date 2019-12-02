@@ -1,5 +1,8 @@
 function parseData(body) {
-  const flights = body.data.itineraries.map(flight => {
+  let { itineraries } = body.data;
+  itineraries = Array.isArray(itineraries[0]) ? itineraries[0] : itineraries;
+  console.log(itineraries);
+  const flights = itineraries.map(flight => {
     const price = flight.pricing.provider.total_fare;
     const cabin = flight.cabin.name;
     const trip = flight.origin_destinations.map(origin => {
