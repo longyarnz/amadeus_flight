@@ -55,8 +55,16 @@ function renderAirportDetails(stop) {
   let markup = airportMarkup;
   markup = markup.replace('{{departure_code}}', stop.departure.code);
   markup = markup.replace('{{arrival_code}}', stop.arrival.code);
-  markup = markup.replace('{{duration}}', stops.date);
+  const duration = getFlightDuration(stop.departure, stop.arrival);
+  console.log(duration);
+  markup = markup.replace('{{duration}}', `${duration}h`);
   return markup;
+}
+
+function getFlightDuration(D, A) {
+  const departure = moment(`${D.date} ${D.time}`);
+  const arrival = moment(`${A.date} ${A.time}`);
+  return departure.diff(arrival, 'hours');
 }
 
 function renderAirlineDetails() {
