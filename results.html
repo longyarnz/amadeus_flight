@@ -1,120 +1,212 @@
 <!DOCTYPE HTML>
 <html lang="en">
-  <head>
-    <title>Travel Mate - Flight results</title>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/font-awesome.css"/>
-    <link rel="stylesheet" href="css/lineicons.css"/>
-    <link rel="stylesheet" href="css/weather-icons.css"/>
-    <link rel="stylesheet" href="css/bootstrap.css"/>
-    <link rel="stylesheet" href="css/styles.css"/>
-  </head>
-  <body>
-    <nav
-      class="navbar navbar-default navbar-inverse navbar-theme navbar-theme-abs navbar-theme-transparent navbar-theme-border"
-      id="main-nav">
-      <div class="container">
-        <div class="navbar-inner nav">
-          <div class="navbar-header">
-            <button class="navbar-toggle collapsed" data-target="#navbar-main" data-toggle="collapse" type="button"
-              area-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html">
-              <img src="img/logo.png" alt="Image Alternative text" title="Image Title" />
-            </a>
-          </div>
-          <div class="collapse navbar-collapse" id="navbar-main">
-            <ul class="nav navbar-nav">
-              <li>
-                <a href="/" role="button" aria-haspopup="true" aria-expanded="false">Search For Flights</a>
-              </li>
-              <li class="active">
-                <a href="results.html" role="button" aria-haspopup="true" aria-expanded="false">Check Search Results</a>
-              </li>
-            </ul>
-          </div>
+
+<head>
+  <title>Travel Mate - Flight results</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" />
+  <link rel="stylesheet" href="css/font-awesome.css" />
+  <link rel="stylesheet" href="css/lineicons.css" />
+  <link rel="stylesheet" href="css/weather-icons.css" />
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <nav
+    class="navbar navbar-default navbar-inverse navbar-theme navbar-theme-abs navbar-theme-transparent navbar-theme-border"
+    id="main-nav">
+    <div class="container">
+      <div class="navbar-inner nav">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" data-target="#navbar-main" data-toggle="collapse" type="button"
+            area-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">
+            <img src="img/logo.png" alt="Image Alternative text" title="Image Title" />
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="/" role="button" aria-haspopup="true" aria-expanded="false">Search For Flights</a>
+            </li>
+            <li class="active">
+              <a href="results.html" role="button" aria-haspopup="true" aria-expanded="false">Check Search Results</a>
+            </li>
+          </ul>
         </div>
       </div>
-    </nav>
-    <div class="theme-hero-area front">
-      <div class="theme-hero-area-bg-wrap">
-        <div class="theme-hero-area-bg theme-hero-area-bg-blur" style="background-image:url(./img/plane.png);"></div>
-        <div class="theme-hero-area-mask theme-hero-area-mask-half"></div>
-      </div>
-      <div class="theme-hero-area-body">
-        <div class="container">
-          <div class="_pb-50 _pt-100 _pv-mob-50">
-            <div class="theme-search-area _mob-h theme-search-area-white">
-              <div class="theme-search-area-header _mb-20">
-                <h1 class="theme-search-area-title theme-search-area-title-sm">265 Flights to Lodon</h1>
-              </div>
+    </div>
+  </nav>
+  <div class="theme-hero-area front">
+    <div class="theme-hero-area-bg-wrap">
+      <div class="theme-hero-area-bg theme-hero-area-bg-blur" style="background-image:url(./img/plane.png);"></div>
+      <div class="theme-hero-area-mask theme-hero-area-mask-half"></div>
+    </div>
+    <div class="theme-hero-area-body">
+      <div class="container">
+        <div class="_pb-50 _pt-100 _pv-mob-50">
+          <div class="theme-search-area _mob-h theme-search-area-white">
+            <div class="theme-search-area-header _mb-20">
+              <h1 class="theme-search-area-title theme-search-area-title-sm">265 Flights to Lodon</h1>
+            </div>
+            <form action="POST">
               <div class="theme-search-area-form" id="hero-search-form">
                 <div class="row" data-gutter="10">
-                  <div class="col-md-5 ">
+                  <div class="col-md-12 ">
                     <div class="row" data-gutter="10">
-                      <div class="col-md-6 ">
-                        <div class="theme-search-area-section first theme-search-area-section-curved theme-search-area-section-sm theme-search-area-section-fade-white theme-search-area-section-no-border">
+                      <div class="col-md-3 ">
+                        <div
+                          class="theme-search-area-section first theme-search-area-section-curved theme-search-area-section-sm theme-search-area-section-fade-white theme-search-area-section-no-border">
                           <label class="theme-search-area-section-label _op-06">From</label>
                           <div class="theme-search-area-section-inner">
                             <i class="theme-search-area-section-icon lin lin-location-pin"></i>
-                            <input class="theme-search-area-section-input typeahead" value="New York, United States" type="text" placeholder="Departure" data-provide="typeahead"/>
+                            <input required autocomplete="off" class="theme-search-area-section-input typeahead"
+                              type="text" placeholder="Departure City" data-provide="typeahead" name="departure_city" />
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-6 ">
-                        <div class="theme-search-area-section theme-search-area-section-curved theme-search-area-section-sm theme-search-area-section-fade-white theme-search-area-section-no-border">
+                      <div class="col-md-3 ">
+                        <div
+                          class="theme-search-area-section theme-search-area-section-curved theme-search-area-section-sm theme-search-area-section-fade-white theme-search-area-section-no-border">
                           <label class="theme-search-area-section-label _op-06">To</label>
                           <div class="theme-search-area-section-inner">
                             <i class="theme-search-area-section-icon lin lin-location-pin"></i>
-                            <input class="theme-search-area-section-input typeahead" value="London, United Kindom" type="text" placeholder="Arrival" data-provide="typeahead"/>
+                            <input required autocomplete="off" class="theme-search-area-section-input typeahead"
+                              type="text" placeholder="Destination City" data-provide="typeahead"
+                              name="destination_city" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3 ">
+                        <div
+                          class="theme-search-area-section theme-search-area-section-curved theme-search-area-section-sm theme-search-area-section-fade-white theme-search-area-section-no-border">
+                          <label class="theme-search-area-section-label _op-06">Depart</label>
+                          <div class="theme-search-area-section-inner">
+                            <i class="theme-search-area-section-icon lin lin-calendar"></i>
+                            <input required class="theme-search-area-section-input datePickerStart _mob-h" type="text"
+                              name="departure_date" placeholder="Departure Date" />
+                            <input class="theme-search-area-section-input _desk-h mobile-picker" type="date" value="" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3 ">
+                        <div
+                          class="theme-search-area-section theme-search-area-section-curved theme-search-area-section-sm theme-search-area-section-fade-white theme-search-area-section-no-border">
+                          <label class="theme-search-area-section-label _op-06">Arrival</label>
+                          <div class="theme-search-area-section-inner">
+                            <i class="theme-search-area-section-icon lin lin-calendar"></i>
+                            <input class="theme-search-area-section-input datePickerEnd _mob-h" type="text"
+                              name="return_date" placeholder="Return Date" />
+                            <input class="theme-search-area-section-input _desk-h mobile-picker" value="" type="date" />
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-6 ">
+                </div>
+              </div>
+              <div class="theme-search-area-form" id="hero-search-form">
+                <div class="row" data-gutter="10">
+                  <div class="col-md-12 ">
                     <div class="row" data-gutter="10">
-                      <div class="col-md-4 ">
-                        <div class="theme-search-area-section theme-search-area-section-curved theme-search-area-section-sm theme-search-area-section-fade-white theme-search-area-section-no-border">
-                          <label class="theme-search-area-section-label _op-06">Depart</label>
+                      <div class="col-md-3 ">
+                        <div
+                          class="theme-search-area-section theme-search-area-section-curved theme-search-area-section-sm theme-search-area-section-fade-white theme-search-area-section-no-border">
+                          <label class="theme-search-area-section-label _op-06">Cabin</label>
                           <div class="theme-search-area-section-inner">
-                            <i class="theme-search-area-section-icon lin lin-calendar"></i>
-                            <input class="theme-search-area-section-input datePickerStart _mob-h" value="Wed 06/27" type="text" placeholder="Check-in"/>
-                            <input class="theme-search-area-section-input _desk-h mobile-picker" value="2018-06-27" type="date"/>
+                            <i class="theme-search-area-section-icon lin lin-badge"></i>
+                            <div class="theme-payment-page-form-item form-group">
+                              <i class="fa fa-angle-down "></i>
+                              <select class="form-control add-left-padding theme-search-area-section-input "
+                                name="cabin">
+                                <option value="false">Select your preferred cabin</option>
+                                <option value="All">All</option>
+                                <option value="Business">Business</option>
+                                <option value="Economy">Economy</option>
+                                <option value="First">First</option>
+                                <option value="Premium">Premium</option>
+                              </select>
+                            </div>
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-4 ">
-                        <div class="theme-search-area-section theme-search-area-section-curved theme-search-area-section-sm theme-search-area-section-fade-white theme-search-area-section-no-border">
-                          <label class="theme-search-area-section-label _op-06">Arrival</label>
-                          <div class="theme-search-area-section-inner">
-                            <i class="theme-search-area-section-icon lin lin-calendar"></i>
-                            <input class="theme-search-area-section-input datePickerEnd _mob-h" value="Mon 07/02" type="text" placeholder="Check-out"/>
-                            <input class="theme-search-area-section-input _desk-h mobile-picker" value="2018-07-02" type="date"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-4 ">
-                        <div class="theme-search-area-section theme-search-area-section-curved theme-search-area-section-sm theme-search-area-section-fade-white theme-search-area-section-no-border quantity-selector" data-increment="Passengers">
-                          <label class="theme-search-area-section-label _op-06">Total Number of Passengers</label>
+                      <div class="col-md-3 ">
+                        <div
+                          class="theme-search-area-section theme-search-area-section-curved quantity-selector theme-search-area-section-sm theme-search-area-section-fade-white theme-search-area-section-no-border"
+                          data-increment="Adults">
+                          <label class="theme-search-area-section-label _op-06">Adults</label>
                           <div class="theme-search-area-section-inner">
                             <i class="theme-search-area-section-icon lin lin-people"></i>
-                            <input class="theme-search-area-section-input" value="1 Passenger" type="text" pattern="[1-9][\d]* Passenger[s]?" />
+                            <input autocomplete="off" class="theme-search-area-section-input" value="0 Adult"
+                              type="text" name="no_of_adult" pattern="[0-9][\d]* Adult[s]?" />
                             <div class="quantity-selector-box" id="FlySearchPassengers">
                               <div class="quantity-selector-inner">
-                                <p class="quantity-selector-title">Passengers</p>
+                                <p class="quantity-selector-title">Adults >12 yrs</p>
                                 <ul class="quantity-selector-controls">
                                   <li class="quantity-selector-decrement">
                                     <a href="#">&#45;</a>
                                   </li>
-                                  <li class="quantity-selector-current">1</li>
+                                  <li class="quantity-selector-current">0</li>
+                                  <li class="quantity-selector-increment">
+                                    <a href="#">&#43;</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3 ">
+                        <div
+                          class="theme-search-area-section theme-search-area-section-curved quantity-selector theme-search-area-section-sm theme-search-area-section-fade-white theme-search-area-section-no-border"
+                          data-increment="Children">
+                          <label class="theme-search-area-section-label _op-06">Children</label>
+                          <div class="theme-search-area-section-inner">
+                            <i class="theme-search-area-section-icon lin lin-people"></i>
+                            <input autocomplete="off" class="theme-search-area-section-input" value="0 Child"
+                              type="text" name="no_of_child" />
+                            <div class="quantity-selector-box" id="FlySearchPassengers">
+                              <div class="quantity-selector-inner">
+                                <p class="quantity-selector-title">Children 2-12 yrs</p>
+                                <ul class="quantity-selector-controls">
+                                  <li class="quantity-selector-decrement">
+                                    <a href="#">&#45;</a>
+                                  </li>
+                                  <li class="quantity-selector-current">0</li>
+                                  <li class="quantity-selector-increment">
+                                    <a href="#">&#43;</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3 ">
+                        <div
+                          class="theme-search-area-section theme-search-area-section-curved quantity-selector theme-search-area-section-sm theme-search-area-section-fade-white theme-search-area-section-no-border"
+                          data-increment="Infants">
+                          <label class="theme-search-area-section-label _op-06">Infants</label>
+                          <div class="theme-search-area-section-inner add-border-right">
+                            <i class="theme-search-area-section-icon lin lin-people"></i>
+                            <input autocomplete="off" class="theme-search-area-section-input" value="0 Infant"
+                              type="text" name="no_of_infant" />
+                            <div class="quantity-selector-box" id="FlySearchPassengers">
+                              <div class="quantity-selector-inner">
+                                <p class="quantity-selector-title">Infants 0-2 yrs</p>
+                                <ul class="quantity-selector-controls">
+                                  <li class="quantity-selector-decrement">
+                                    <a href="#">&#45;</a>
+                                  </li>
+                                  <li class="quantity-selector-current">0</li>
                                   <li class="quantity-selector-increment">
                                     <a href="#">&#43;</a>
                                   </li>
@@ -126,94 +218,94 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-1 ">
-                    <button class="theme-search-area-submit _tt-uc theme-search-area-submit-curved theme-search-area-submit-sm theme-search-area-submit-no-border theme-search-area-submit-primary">Edit</button>
-                  </div>
                 </div>
               </div>
-              <div class="theme-search-area-options clearfix">
-                <div class="btn-group theme-search-area-options-list" data-toggle="buttons">
-                  <label class="btn btn-primary active">
-                    <input type="radio" name="flight-options" id="flight-option-1" checked/>Round Trip
-                  </label>
-                  <label class="btn btn-primary">
-                    <input type="radio" name="flight-options" id="flight-option-2"/>One Way
-                  </label>
+              <div class="theme-search-area-form">
+                <div>
+                  <button
+                    class="theme-search-area-submit _tt-uc theme-search-area-submit-curved theme-search-area-submit-sm theme-search-area-submit-no-border theme-search-area-submit-primary">Edit</button>
                 </div>
               </div>
-            </div>
-            <div class="theme-search-area-inline _desk-h theme-search-area-inline-white">
-              <h4 class="theme-search-area-inline-title">Lodon Flights</h4>
-              <p class="theme-search-area-inline-details">June 27 &rarr; July 02, 1 Passnger</p>
-              <a class="theme-search-area-inline-link magnific-inline" href="#searchEditModal">
-                <i class="fa fa-pencil"></i>Edit
-              </a>
-              <div class="magnific-popup magnific-popup-sm mfp-hide" id="searchEditModal">
-                <div class="theme-search-area theme-search-area-vert">
-                  <div class="theme-search-area-header">
-                    <h1 class="theme-search-area-title theme-search-area-title-sm">Edit your Search</h1>
-                    <p class="theme-search-area-subtitle">Prices might be different from current results</p>
+            </form>
+          </div>
+          <div class="theme-search-area-inline _desk-h theme-search-area-inline-white">
+            <h4 class="theme-search-area-inline-title">Lodon Flights</h4>
+            <p class="theme-search-area-inline-details">June 27 &rarr; July 02, 1 Passnger</p>
+            <a class="theme-search-area-inline-link magnific-inline" href="#searchEditModal">
+              <i class="fa fa-pencil"></i>Edit
+            </a>
+            <div class="magnific-popup magnific-popup-sm mfp-hide" id="searchEditModal">
+              <div class="theme-search-area theme-search-area-vert">
+                <div class="theme-search-area-header">
+                  <h1 class="theme-search-area-title theme-search-area-title-sm">Edit your Search</h1>
+                  <p class="theme-search-area-subtitle">Prices might be different from current results</p>
+                </div>
+                <div class="theme-search-area-form">
+                  <div class="theme-search-area-section first theme-search-area-section-curved">
+                    <label class="theme-search-area-section-label">From</label>
+                    <div class="theme-search-area-section-inner">
+                      <i class="theme-search-area-section-icon lin lin-location-pin"></i>
+                      <input class="theme-search-area-section-input typeahead" value="New York" type="text"
+                        placeholder="Departure" data-provide="typeahead" />
+                    </div>
                   </div>
-                  <div class="theme-search-area-form">
-                    <div class="theme-search-area-section first theme-search-area-section-curved">
-                      <label class="theme-search-area-section-label">From</label>
-                      <div class="theme-search-area-section-inner">
-                        <i class="theme-search-area-section-icon lin lin-location-pin"></i>
-                        <input class="theme-search-area-section-input typeahead" value="New York" type="text" placeholder="Departure" data-provide="typeahead"/>
-                      </div>
+                  <div class="theme-search-area-section theme-search-area-section-curved">
+                    <label class="theme-search-area-section-label">To</label>
+                    <div class="theme-search-area-section-inner">
+                      <i class="theme-search-area-section-icon lin lin-location-pin"></i>
+                      <input class="theme-search-area-section-input typeahead" type="text" placeholder="Arrival"
+                        data-provide="typeahead" />
                     </div>
-                    <div class="theme-search-area-section theme-search-area-section-curved">
-                      <label class="theme-search-area-section-label">To</label>
-                      <div class="theme-search-area-section-inner">
-                        <i class="theme-search-area-section-icon lin lin-location-pin"></i>
-                        <input class="theme-search-area-section-input typeahead" type="text" placeholder="Arrival" data-provide="typeahead"/>
-                      </div>
-                    </div>
-                    <div class="row" data-gutter="10">
-                      <div class="col-md-6 ">
-                        <div class="theme-search-area-section theme-search-area-section-curved">
-                          <label class="theme-search-area-section-label">Depart</label>
-                          <div class="theme-search-area-section-inner">
-                            <i class="theme-search-area-section-icon lin lin-calendar"></i>
-                            <input class="theme-search-area-section-input datePickerStart _mob-h" value="Wed 06/27" type="text" placeholder="Check-in"/>
-                            <input class="theme-search-area-section-input _desk-h mobile-picker" value="2018-06-27" type="date"/>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6 ">
-                        <div class="theme-search-area-section theme-search-area-section-curved">
-                          <label class="theme-search-area-section-label">Arrival</label>
-                          <div class="theme-search-area-section-inner">
-                            <i class="theme-search-area-section-icon lin lin-calendar"></i>
-                            <input class="theme-search-area-section-input datePickerEnd _mob-h" value="Mon 07/02" type="text" placeholder="Check-out"/>
-                            <input class="theme-search-area-section-input _desk-h mobile-picker" value="2018-07-02" type="date"/>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="theme-search-area-section theme-search-area-section-curved quantity-selector" data-increment="Passengers">
-                      <label class="theme-search-area-section-label">Passengers</label>
-                      <div class="theme-search-area-section-inner">
-                        <i class="theme-search-area-section-icon lin lin-people"></i>
-                        <input class="theme-search-area-section-input" value="1 Passenger" type="text"/>
-                        <div class="quantity-selector-box" id="mobile-FlySearchPassengers">
-                          <div class="quantity-selector-inner">
-                            <p class="quantity-selector-title">Passengers</p>
-                            <ul class="quantity-selector-controls">
-                              <li class="quantity-selector-decrement">
-                                <a href="#">&#45;</a>
-                              </li>
-                              <li class="quantity-selector-current">1</li>
-                              <li class="quantity-selector-increment">
-                                <a href="#">&#43;</a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button class="theme-search-area-submit _mt-0 _tt-uc theme-search-area-submit-curved">Change</button>
                   </div>
+                  <div class="row" data-gutter="10">
+                    <div class="col-md-6 ">
+                      <div class="theme-search-area-section theme-search-area-section-curved">
+                        <label class="theme-search-area-section-label">Depart</label>
+                        <div class="theme-search-area-section-inner">
+                          <i class="theme-search-area-section-icon lin lin-calendar"></i>
+                          <input class="theme-search-area-section-input datePickerStart _mob-h" value="Wed 06/27"
+                            type="text" placeholder="Check-in" />
+                          <input class="theme-search-area-section-input _desk-h mobile-picker" value="2018-06-27"
+                            type="date" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 ">
+                      <div class="theme-search-area-section theme-search-area-section-curved">
+                        <label class="theme-search-area-section-label">Arrival</label>
+                        <div class="theme-search-area-section-inner">
+                          <i class="theme-search-area-section-icon lin lin-calendar"></i>
+                          <input class="theme-search-area-section-input datePickerEnd _mob-h" value="Mon 07/02"
+                            type="text" placeholder="Check-out" />
+                          <input class="theme-search-area-section-input _desk-h mobile-picker" value="2018-07-02"
+                            type="date" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="theme-search-area-section theme-search-area-section-curved quantity-selector"
+                    data-increment="Passengers">
+                    <label class="theme-search-area-section-label">Passengers</label>
+                    <div class="theme-search-area-section-inner">
+                      <i class="theme-search-area-section-icon lin lin-people"></i>
+                      <input class="theme-search-area-section-input" value="1 Passenger" type="text" />
+                      <div class="quantity-selector-box" id="mobile-FlySearchPassengers">
+                        <div class="quantity-selector-inner">
+                          <p class="quantity-selector-title">Passengers</p>
+                          <ul class="quantity-selector-controls">
+                            <li class="quantity-selector-decrement">
+                              <a href="#">&#45;</a>
+                            </li>
+                            <li class="quantity-selector-current">1</li>
+                            <li class="quantity-selector-increment">
+                              <a href="#">&#43;</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="theme-search-area-submit _mt-0 _tt-uc theme-search-area-submit-curved">Change</button>
                 </div>
               </div>
             </div>
@@ -221,162 +313,171 @@
         </div>
       </div>
     </div>
-    <div class="theme-page-section theme-page-section-gray add-full-page-height">
-      <div class="container">
-        <div class="row row-col-static" id="sticky-parent" data-gutter="20">
-          <div class="col-md-12">
-            <div class="theme-search-results">
-              <div class="theme-search-results-item _mb-10 theme-search-results-item-rounded theme-search-results-item-">
-                <div class="theme-search-results-item-preview">
-                  <a class="theme-search-results-item-mask-link" href="#searchResultsItem-1" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="searchResultsItem-1"></a>
-                  <div class="row" data-gutter="20">
-                    <div class="col-md-10 ">
-                      <div class="theme-search-results-item-flight-sections">
-                        <div class="theme-search-results-item-flight-section">
-                          <div class="row row-no-gutter row-eq-height">
-                            <div class="col-md-2 ">
-                              <div class="theme-search-results-item-flight-section-airline-logo-wrap">
-                                <img class="theme-search-results-item-flight-section-airline-logo" src="./img/351x253.png" alt="Image Alternative text" title="Image Title"/>
-                              </div>
+  </div>
+  <div class="theme-page-section theme-page-section-gray add-full-page-height">
+    <div class="container">
+      <div class="row row-col-static" id="sticky-parent" data-gutter="20">
+        <div class="col-md-12">
+          <div class="theme-search-results">
+            <div class="theme-search-results-item _mb-10 theme-search-results-item-rounded theme-search-results-item-">
+              <div class="theme-search-results-item-preview">
+                <a class="theme-search-results-item-mask-link" href="#searchResultsItem-1" role="button"
+                  data-toggle="collapse" aria-expanded="false" aria-controls="searchResultsItem-1"></a>
+                <div class="row" data-gutter="20">
+                  <div class="col-md-10 ">
+                    <div class="theme-search-results-item-flight-sections">
+                      <div class="theme-search-results-item-flight-section">
+                        <div class="row row-no-gutter row-eq-height">
+                          <div class="col-md-2 ">
+                            <div class="theme-search-results-item-flight-section-airline-logo-wrap">
+                              <img class="theme-search-results-item-flight-section-airline-logo" src="./img/351x253.png"
+                                alt="Image Alternative text" title="Image Title" />
                             </div>
-                            <div class="col-md-10 ">
-                              <div class="theme-search-results-item-flight-section-item">
-                                <div class="row">
-                                  <div class="col-md-3 ">
-                                    <div class="theme-search-results-item-flight-section-meta">
-                                      <p class="theme-search-results-item-flight-section-meta-time">07:30
-                                        <span>pm</span>
-                                      </p>
-                                      <p class="theme-search-results-item-flight-section-meta-city">London</p>
-                                      <p class="theme-search-results-item-flight-section-meta-date">May 17, 2018</p>
+                          </div>
+                          <div class="col-md-10 ">
+                            <div class="theme-search-results-item-flight-section-item">
+                              <div class="row">
+                                <div class="col-md-3 ">
+                                  <div class="theme-search-results-item-flight-section-meta">
+                                    <p class="theme-search-results-item-flight-section-meta-time">07:30
+                                      <span>pm</span>
+                                    </p>
+                                    <p class="theme-search-results-item-flight-section-meta-city">London</p>
+                                    <p class="theme-search-results-item-flight-section-meta-date">May 17, 2018</p>
+                                  </div>
+                                </div>
+                                <div class="col-md-6 ">
+                                  <div class="theme-search-results-item-flight-section-path">
+                                    <div class="theme-search-results-item-flight-section-path-fly-time">
+                                      <p>17h 50m</p>
+                                    </div>
+                                    <div class="theme-search-results-item-flight-section-path-line"></div>
+                                    <div class="theme-search-results-item-flight-section-path-line-start">
+                                      <i class="fa fa-plane theme-search-results-item-flight-section-path-icon"></i>
+                                      <div class="theme-search-results-item-flight-section-path-line-dot"></div>
+                                      <div class="theme-search-results-item-flight-section-path-line-title">CLY</div>
+                                    </div>
+                                    <div class="theme-search-results-item-flight-section-path-line-end">
+                                      <i class="fa fa-plane theme-search-results-item-flight-section-path-icon"></i>
+                                      <div class="theme-search-results-item-flight-section-path-line-dot"></div>
+                                      <div class="theme-search-results-item-flight-section-path-line-title">EWR</div>
                                     </div>
                                   </div>
-                                  <div class="col-md-6 ">
-                                    <div class="theme-search-results-item-flight-section-path">
-                                      <div class="theme-search-results-item-flight-section-path-fly-time">
-                                        <p>17h 50m</p>
-                                      </div>
-                                      <div class="theme-search-results-item-flight-section-path-line"></div>
-                                      <div class="theme-search-results-item-flight-section-path-line-start">
-                                        <i class="fa fa-plane theme-search-results-item-flight-section-path-icon"></i>
-                                        <div class="theme-search-results-item-flight-section-path-line-dot"></div>
-                                        <div class="theme-search-results-item-flight-section-path-line-title">CLY</div>
-                                      </div>
-                                      <div class="theme-search-results-item-flight-section-path-line-end">
-                                        <i class="fa fa-plane theme-search-results-item-flight-section-path-icon"></i>
-                                        <div class="theme-search-results-item-flight-section-path-line-dot"></div>
-                                        <div class="theme-search-results-item-flight-section-path-line-title">EWR</div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-3 ">
-                                    <div class="theme-search-results-item-flight-section-meta">
-                                      <p class="theme-search-results-item-flight-section-meta-time">01:20
-                                        <span>pm</span>
-                                      </p>
-                                      <p class="theme-search-results-item-flight-section-meta-city">New York</p>
-                                      <p class="theme-search-results-item-flight-section-meta-date">May 18, 2018</p>
-                                    </div>
+                                </div>
+                                <div class="col-md-3 ">
+                                  <div class="theme-search-results-item-flight-section-meta">
+                                    <p class="theme-search-results-item-flight-section-meta-time">01:20
+                                      <span>pm</span>
+                                    </p>
+                                    <p class="theme-search-results-item-flight-section-meta-city">New York</p>
+                                    <p class="theme-search-results-item-flight-section-meta-date">May 18, 2018</p>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <h5 class="theme-search-results-item-flight-section-airline-title">Operated by Virgin Atlantic Airways</h5>
                         </div>
-                        <div class="theme-search-results-item-flight-section">
-                          <div class="row row-no-gutter row-eq-height">
-                            <div class="col-md-2 ">
-                              <div class="theme-search-results-item-flight-section-airline-logo-wrap">
-                                <img class="theme-search-results-item-flight-section-airline-logo" src="./img/310x304.png" alt="Image Alternative text" title="Image Title"/>
-                              </div>
+                        <h5 class="theme-search-results-item-flight-section-airline-title">Operated by Virgin Atlantic
+                          Airways</h5>
+                      </div>
+                      <div class="theme-search-results-item-flight-section">
+                        <div class="row row-no-gutter row-eq-height">
+                          <div class="col-md-2 ">
+                            <div class="theme-search-results-item-flight-section-airline-logo-wrap">
+                              <img class="theme-search-results-item-flight-section-airline-logo" src="./img/310x304.png"
+                                alt="Image Alternative text" title="Image Title" />
                             </div>
-                            <div class="col-md-10 ">
-                              <div class="theme-search-results-item-flight-section-item">
-                                <div class="row">
-                                  <div class="col-md-3 ">
-                                    <div class="theme-search-results-item-flight-section-meta">
-                                      <p class="theme-search-results-item-flight-section-meta-time">12:10
-                                        <span>am</span>
-                                      </p>
-                                      <p class="theme-search-results-item-flight-section-meta-city">New York</p>
-                                      <p class="theme-search-results-item-flight-section-meta-date">May 23, 2018</p>
+                          </div>
+                          <div class="col-md-10 ">
+                            <div class="theme-search-results-item-flight-section-item">
+                              <div class="row">
+                                <div class="col-md-3 ">
+                                  <div class="theme-search-results-item-flight-section-meta">
+                                    <p class="theme-search-results-item-flight-section-meta-time">12:10
+                                      <span>am</span>
+                                    </p>
+                                    <p class="theme-search-results-item-flight-section-meta-city">New York</p>
+                                    <p class="theme-search-results-item-flight-section-meta-date">May 23, 2018</p>
+                                  </div>
+                                </div>
+                                <div class="col-md-6 ">
+                                  <div class="theme-search-results-item-flight-section-path">
+                                    <div class="theme-search-results-item-flight-section-path-fly-time">
+                                      <p>16h 40m</p>
+                                    </div>
+                                    <div class="theme-search-results-item-flight-section-path-line"></div>
+                                    <div class="theme-search-results-item-flight-section-path-line-start">
+                                      <i class="fa fa-plane theme-search-results-item-flight-section-path-icon"></i>
+                                      <div class="theme-search-results-item-flight-section-path-line-dot"></div>
+                                      <div class="theme-search-results-item-flight-section-path-line-title">LCW</div>
+                                    </div>
+                                    <div class="theme-search-results-item-flight-section-path-line-end">
+                                      <i class="fa fa-plane theme-search-results-item-flight-section-path-icon"></i>
+                                      <div class="theme-search-results-item-flight-section-path-line-dot"></div>
+                                      <div class="theme-search-results-item-flight-section-path-line-title">LGA</div>
                                     </div>
                                   </div>
-                                  <div class="col-md-6 ">
-                                    <div class="theme-search-results-item-flight-section-path">
-                                      <div class="theme-search-results-item-flight-section-path-fly-time">
-                                        <p>16h 40m</p>
-                                      </div>
-                                      <div class="theme-search-results-item-flight-section-path-line"></div>
-                                      <div class="theme-search-results-item-flight-section-path-line-start">
-                                        <i class="fa fa-plane theme-search-results-item-flight-section-path-icon"></i>
-                                        <div class="theme-search-results-item-flight-section-path-line-dot"></div>
-                                        <div class="theme-search-results-item-flight-section-path-line-title">LCW</div>
-                                      </div>
-                                      <div class="theme-search-results-item-flight-section-path-line-end">
-                                        <i class="fa fa-plane theme-search-results-item-flight-section-path-icon"></i>
-                                        <div class="theme-search-results-item-flight-section-path-line-dot"></div>
-                                        <div class="theme-search-results-item-flight-section-path-line-title">LGA</div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-md-3 ">
-                                    <div class="theme-search-results-item-flight-section-meta">
-                                      <p class="theme-search-results-item-flight-section-meta-time">04:50
-                                        <span>am</span>
-                                      </p>
-                                      <p class="theme-search-results-item-flight-section-meta-city">London</p>
-                                      <p class="theme-search-results-item-flight-section-meta-date">May 24, 2018</p>
-                                    </div>
+                                </div>
+                                <div class="col-md-3 ">
+                                  <div class="theme-search-results-item-flight-section-meta">
+                                    <p class="theme-search-results-item-flight-section-meta-time">04:50
+                                      <span>am</span>
+                                    </p>
+                                    <p class="theme-search-results-item-flight-section-meta-city">London</p>
+                                    <p class="theme-search-results-item-flight-section-meta-date">May 24, 2018</p>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <h5 class="theme-search-results-item-flight-section-airline-title">Operated by American Airlines</h5>
                         </div>
+                        <h5 class="theme-search-results-item-flight-section-airline-title">Operated by American Airlines
+                        </h5>
                       </div>
                     </div>
-                    <div class="col-md-2 ">
-                      <div class="theme-search-results-item-book">
-                        <div class="theme-search-results-item-price">
-                          <p class="theme-search-results-item-price-tag">$179</p>
-                          <p class="theme-search-results-item-price-sign">economy</p>
-                        </div>
-                        <a class="btn btn-primary-inverse btn-block theme-search-results-item-price-btn" href="#">Book Now</a>
+                  </div>
+                  <div class="col-md-2 ">
+                    <div class="theme-search-results-item-book">
+                      <div class="theme-search-results-item-price">
+                        <p class="theme-search-results-item-price-tag">$179</p>
+                        <p class="theme-search-results-item-price-sign">economy</p>
                       </div>
+                      <a class="btn btn-primary-inverse btn-block theme-search-results-item-price-btn" href="#">Book
+                        Now</a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <a class="btn _tt-uc _fs-sm btn-dark btn-block btn-lg" href="#">Load More Results</a>
           </div>
+          <a class="btn _tt-uc _fs-sm btn-dark btn-block btn-lg" href="#">Load More Results</a>
         </div>
       </div>
     </div>
-    <script src="js/jquery.js"></script>
-    <script src="js/moment.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYeBBmgAkyAN_QKjAVOiP_kWZ_eQdadeI&callback=initMap&libraries=places"></script>
-    <script src="js/owl-carousel.js"></script>
-    <script src="js/blur-area.js"></script>
-    <script src="js/icheck.js"></script>
-    <script src="js/gmap.js"></script>
-    <script src="js/magnific-popup.js"></script>
-    <script src="js/ion-range-slider.js"></script>
-    <script src="js/sticky-kit.js"></script>
-    <script src="js/smooth-scroll.js"></script>
-    <script src="js/fotorama.js"></script>
-    <script src="js/bs-datepicker.js"></script>
-    <script src="js/typeahead.js"></script>
-    <script src="js/quantity-selector.js"></script>
-    <script src="js/countdown.js"></script>
-    <script src="js/window-scroll-action.js"></script>
-    <script src="js/fitvid.js"></script>
-    <script src="js/youtube-bg.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="js/results.js"></script>
-  </body>
+  </div>
+  <script src="js/jquery.js"></script>
+  <script src="js/moment.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYeBBmgAkyAN_QKjAVOiP_kWZ_eQdadeI&callback=initMap&libraries=places"></script>
+  <script src="js/owl-carousel.js"></script>
+  <script src="js/blur-area.js"></script>
+  <script src="js/icheck.js"></script>
+  <script src="js/gmap.js"></script>
+  <script src="js/magnific-popup.js"></script>
+  <script src="js/ion-range-slider.js"></script>
+  <script src="js/sticky-kit.js"></script>
+  <script src="js/smooth-scroll.js"></script>
+  <script src="js/fotorama.js"></script>
+  <script src="js/bs-datepicker.js"></script>
+  <script src="js/typeahead.js"></script>
+  <script src="js/quantity-selector.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/window-scroll-action.js"></script>
+  <script src="js/fitvid.js"></script>
+  <script src="js/youtube-bg.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="js/results.js"></script>
+</body>
+
 </html>

@@ -3,7 +3,7 @@ $(document).ready(function () {
 })
 
 function populateFields() {
-  let data = localStorage.getItem('amadeus_data');
+  let data = localStorage.getItem('amadeus_inputs');
   if (!data) return;
 
  data = JSON.parse(data);
