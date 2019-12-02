@@ -29,6 +29,10 @@ function renderFlightData() {
     markup = renderPriceDetails(markup, flight.price);
     $('.theme-search-results').append(markup);
   });
+  
+  const from = localStorage.getItem('departure_city').split(', ')[0];
+  const to = localStorage.getItem('destination_city').split(', ')[0];
+  $('.theme-search-area-title').html(`${data.total} flights from ${from} to ${to}.`);
 }
 
 function renderStopsDetails(html, stops) {
@@ -40,6 +44,7 @@ function renderStopsDetails(html, stops) {
     markup = markup.replace('{{departure_details}}', departure);
     markup = markup.replace('{{arrival_details}}', arrival);
     markup = markup.replace('{{airport_details}}', airport);
+    markup = markup.replace('{{airline_name}}', flight.airline);
     return markup;
   }).join('');
 
@@ -152,7 +157,7 @@ const stopsMarkup = `
     </div>
 
     <!-- airline_details -->
-    <h5 class="theme-search-results-item-flight-section-airline-title">Operated by Virgin Atlantic Airways</h5>
+    <h5 class="theme-search-results-item-flight-section-airline-title">Operated by {{airline_name}}</h5>
   </div>
 `;
 
