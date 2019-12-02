@@ -7,13 +7,13 @@ function parseData(body) {
         return {
           airline: obj.operating_airline.name,
           departure: {
-            city: obj.departure.airport.city_name,
+            city: obj.departure.airport.name,
             code: obj.departure.airport.code,
             time: obj.departure.time,
             date: obj.departure.date
           },
           arrival: {
-            city: obj.arrival.airport.city_name,
+            city: obj.arrival.airport.name,
             code: obj.arrival.airport.code,
             time: obj.arrival.time,
             date: obj.arrival.date

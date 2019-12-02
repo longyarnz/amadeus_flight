@@ -153,6 +153,8 @@ async function sendRequest(inputs, cookie) {
   });
 
   let flights;
+  localStorage.removeItem('amadeus_flight');
+  $('.theme-search-results').html('');
 
   try {
     flights = await fetch(URL, {
@@ -163,9 +165,11 @@ async function sendRequest(inputs, cookie) {
       },
     });
     flights = await flights.json();
-    console.log(flights);
+    console.log(flights, 166);
     localStorage.setItem('amadeus_flight', JSON.stringify(flights.body));
     localStorage.setItem('amadeus_inputs', JSON.stringify(inputs));
+    populateFields();
+    renderFlightData();
   }
   catch (err) {
     console.log(err);
