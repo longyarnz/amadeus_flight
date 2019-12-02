@@ -179,6 +179,7 @@ async function sendRequest(inputs, cookie) {
     console.log(err);
     updateSearchTitleHeader('failed');
     toggleLoadMoreButton(0);
+    localStorage.removeItem('amadeus_isSubmitting');
   }
   finally {
     $('form button').text(isNotResultPage ? 'Search' : 'Edit');
