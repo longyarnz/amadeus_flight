@@ -170,6 +170,7 @@ async function sendRequest(inputs, cookie) {
     flights = await flights.json();
     localStorage.setItem('amadeus_flight', JSON.stringify(flights.body));
     localStorage.setItem('amadeus_inputs', JSON.stringify(inputs));
+    localStorage.setItem('amadeus_limit', 10);
     populateFields(status);
     renderFlightData(status);
   }

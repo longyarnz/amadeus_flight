@@ -2,6 +2,7 @@ $(document).ready(function () {
   localStorage.setItem('amadeus_limit', 10);
   populateFields();
   renderFlightData();
+  $('.load-more').click(loadMore);
 });
 
 function updateSearchTitleHeader(key, total = 0) {
@@ -31,7 +32,7 @@ function populateFields(status = 200) {
   }
 }
 
-function renderFlightData(status = 200) {
+function renderFlightData(status = 200, start = 0) {
   let body = localStorage.getItem('amadeus_flight');
   if (!body) return;
   else if (status !== 200) {
@@ -41,11 +42,10 @@ function renderFlightData(status = 200) {
 
   body = JSON.parse(body);
   body = parseData(body);
-  console.log(body);
   const limit = JSON.parse(localStorage.getItem('amadeus_limit'));
 
   body.flights.forEach((flight, i) => {
-    if (i >= limit) return;
+    if (i < start || i >= limit) return;
     let markup = html;
     markup = renderStopsDetails(markup, flight.trip.stops);
     markup = renderCabinDetails(markup, flight.cabin);

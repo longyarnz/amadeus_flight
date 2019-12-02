@@ -1,7 +1,6 @@
 function parseData(body) {
   let { itineraries } = body.data;
   itineraries = Array.isArray(itineraries[0]) ? itineraries[0] : itineraries;
-  console.log(itineraries);
   const flights = itineraries.map(flight => {
     const price = flight.pricing.provider.total_fare;
     const cabin = flight.cabin.name;
@@ -52,4 +51,11 @@ function mergeTrips(trips) {
   }
   else trips = trips[0];
   return trips;
+}
+
+function loadMore() {
+  const limit = JSON.parse(localStorage.getItem('amadeus_limit'));
+  const newLimit = limit + 10;
+  localStorage.setItem('amadeus_limit', newLimit);
+  renderFlightData(200, limit);
 }
