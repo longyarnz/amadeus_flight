@@ -14586,3 +14586,6 @@ input {
   color: #000;
   background: #e6e6e6;
 }
+.load-more {
+  display: none;
+}

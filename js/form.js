@@ -156,6 +156,7 @@ async function sendRequest(inputs, cookie) {
   localStorage.removeItem('amadeus_flight');
   $('.theme-search-results').html('');
   updateSearchTitleHeader('searching');
+  toggleLoadMoreButton(0);
   
   try {
     flights = await fetch(URL, {
@@ -177,6 +178,7 @@ async function sendRequest(inputs, cookie) {
   catch (err) {
     console.log(err);
     updateSearchTitleHeader('failed');
+    toggleLoadMoreButton(0);
   }
   finally {
     $('form button').text(isNotResultPage ? 'Search' : 'Edit');

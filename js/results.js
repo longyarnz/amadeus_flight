@@ -37,10 +37,12 @@ function renderFlightData(status = 200, start = 0) {
   if (!body) return;
   else if (status !== 200) {
     updateSearchTitleHeader('failed');
+    toggleLoadMoreButton(0);
     return;
   }
-
+  
   body = JSON.parse(body);
+  if (!body.data) return;
   body = parseData(body);
   const limit = JSON.parse(localStorage.getItem('amadeus_limit'));
 
@@ -52,7 +54,13 @@ function renderFlightData(status = 200, start = 0) {
     markup = renderPriceDetails(markup, flight.price);
     $('.theme-search-results').append(markup);
     updateSearchTitleHeader('searched', limit);
+    toggleLoadMoreButton(body.total, limit);
   });
+}
+
+function toggleLoadMoreButton(total, limit = 10) {
+  total > limit && $('.load-more').show();
+  total <= limit && $('.load-more').hide();
 }
 
 function renderStopsDetails(html, stops) {
