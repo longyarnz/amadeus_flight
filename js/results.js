@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
   populateFields();
   renderFlightData();
 });
@@ -14,24 +15,33 @@ function updateSearchTitleHeader(key, total = 0) {
   $('.theme-search-area-title').html(titles[key]);
 }
 
-function populateFields() {
-  let data = localStorage.getItem('amadeus_inputs');
-  if (!data) return;
+function populateFields(status = 200) {
+  let body = localStorage.getItem('amadeus_inputs');
+  if (!body || !body.data) return;
+  else if (status !== 200) {
+    updateSearchTitleHeader('failed');
+    return;
+  }
 
-  data = JSON.parse(data);
-  for (const key in data) {
-    let value = populateParams(key, data[key]);
+  body = JSON.parse(body);
+  for (const key in body) {
+    let value = populateParams(key, body[key]);
     value = getLocation(key, value);
     const element = $(`[name="${key}"]`).val(value);
   }
 }
 
-function renderFlightData() {
-  let data = localStorage.getItem('amadeus_flight');
-  if (!data) return;
-  data = JSON.parse(data);
-  data = parseData(data);
-  console.log(data);
+function renderFlightData(status = 200) {
+  let body = localStorage.getItem('amadeus_flight');
+  if (!body || !body.data) return;
+  else if (status !== 200) {
+    updateSearchTitleHeader('failed');
+    return;
+  }
+  
+  body = JSON.parse(body);
+  body = parseDatay(body);
+  console.log(body);
 
   data.flights.forEach(flight => {
     let markup = html;
