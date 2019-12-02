@@ -8,6 +8,8 @@ $(document).ready(function () {
     else {
       localStorage.setItem('amadeus_isSubmitting', 'true');
       $('form button').text('Searching...');
+      !isNotResultPage && $('.theme-loading').css('display', 'block');
+      !isNotResultPage && $('.theme-page-section').css('display', 'none');
     }
 
     const _this = $(this)[0];
@@ -165,6 +167,8 @@ async function sendRequest(inputs, cookie) {
     localStorage.removeItem('amadeus_isSubmitting');
     isNotResultPage && location.assign('results.html');
     $('form button').text(isNotResultPage ? 'Search' : 'Edit');
+    !isNotResultPage && $('.theme-loading').css('display', 'none');
+    !isNotResultPage && $('.theme-page-section').css('display', 'block');
   }
   catch (err) {
     console.log(err)

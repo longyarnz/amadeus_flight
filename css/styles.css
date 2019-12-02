@@ -3576,7 +3576,7 @@ li.active .navbar-nav-item-user-img {
   -o-animation: blink linear 1s infinite;
   -ms-animation: blink linear 1s infinite;
   animation: blink linear 1s infinite;
-  background: #fff;
+  background: #ff6c2d;
 }
 .spinner-grid-dots div:nth-child(1),
 .spinner-grid-dots div:nth-child(6),
@@ -14578,4 +14578,11 @@ input {
 }
 .theme-search-area-form {
   margin-bottom: 20px;
+}
+.theme-loading {
+  display: none;
+  height: calc(100vh - 434px);
+  padding: 50px 0px;
+  color: #000;
+  background: #e6e6e6;
 }
