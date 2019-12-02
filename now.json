@@ -1,0 +1,41 @@
+{
+  "version": 2,
+  "name": "amadeus_flight",
+  "alias": [
+    "amadeus.now.sh"
+  ],
+  "builds": [
+    {
+      "src": "*.html",
+      "use": "@now/html-minifier"
+    },
+    {
+      "src": "js/*.js",
+      "use": "@now/static"
+    },
+    {
+      "src": "css/*.css",
+      "use": "@now/html-minifier"
+    },
+    {
+      "src": "img/*.png",
+      "use": "@now/optipng"
+    },
+    {
+      "src": "img/*.jpg",
+      "use": "@now/static"
+    },
+    {
+      "src": "fonts/*.woff",
+      "use": "@now/static"
+    },
+    {
+      "src": "fonts/*.woff2",
+      "use": "@now/static"
+    },
+    {
+      "src": "fonts/*.ttf",
+      "use": "@now/static"
+    }
+  ]
+}

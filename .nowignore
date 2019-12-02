@@ -1,0 +1,9 @@
+# Folders
+.vscode/
+css/
+
+# Files
+*.zip
+*.log
+.env
+npm.js
