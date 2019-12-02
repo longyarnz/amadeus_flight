@@ -3,6 +3,17 @@ $(document).ready(function () {
   renderFlightData();
 });
 
+function updateSearchTitleHeader(key, total = 0) {
+  const from = localStorage.getItem('departure_city').split(', ')[0];
+  const to = localStorage.getItem('destination_city').split(', ')[0];
+  const titles = {
+    searching: `Searching for flights from ${from} to ${to}.`,
+    searched: `${total} flights from ${from} to ${to}.`,
+    failed: `No flights found. Try to search for other location`
+  };
+  $('.theme-search-area-title').html(titles[key]);
+}
+
 function populateFields() {
   let data = localStorage.getItem('amadeus_inputs');
   if (!data) return;
@@ -28,11 +39,8 @@ function renderFlightData() {
     markup = renderCabinDetails(markup, flight.cabin);
     markup = renderPriceDetails(markup, flight.price);
     $('.theme-search-results').append(markup);
+    updateSearchTitleHeader('searched', data.total);
   });
-  
-  const from = localStorage.getItem('departure_city').split(', ')[0];
-  const to = localStorage.getItem('destination_city').split(', ')[0];
-  $('.theme-search-area-title').html(`${data.total} flights from ${from} to ${to}.`);
 }
 
 function renderStopsDetails(html, stops) {

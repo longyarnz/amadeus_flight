@@ -155,7 +155,8 @@ async function sendRequest(inputs, cookie) {
   let flights;
   localStorage.removeItem('amadeus_flight');
   $('.theme-search-results').html('');
-
+  updateSearchTitleHeader('searching');
+  
   try {
     flights = await fetch(URL, {
       method: 'POST',
@@ -164,6 +165,8 @@ async function sendRequest(inputs, cookie) {
         'Content-Type': 'application/json'
       },
     });
+
+    console.log(flights);
     flights = await flights.json();
     localStorage.setItem('amadeus_flight', JSON.stringify(flights.body));
     localStorage.setItem('amadeus_inputs', JSON.stringify(inputs));
@@ -172,6 +175,7 @@ async function sendRequest(inputs, cookie) {
   }
   catch (err) {
     console.log(err);
+    updateSearchTitleHeader('failed');
   }
   finally {
     $('form button').text(isNotResultPage ? 'Search' : 'Edit');
