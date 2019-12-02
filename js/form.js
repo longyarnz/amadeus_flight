@@ -109,7 +109,7 @@ async function checkAuthorization() {
   const amadeus_cookie = localStorage.getItem('amadeus_cookie');
   if (amadeus_cookie) return amadeus_cookie;
 
-  const URL = 'http://www.ije-api.tcore.xyz/v1/auth/login';
+  const URL = 'https://www.ije-api.tcore.xyz/v1/auth/login';
   const body = JSON.stringify({
     body: {
       email: 'customer@travelportal.com',
@@ -138,7 +138,7 @@ async function checkAuthorization() {
 }
 
 async function sendRequest(inputs, cookie) {
-  const URL = 'http://www.ije-api.tcore.xyz/v1/flight/search-flight';
+  const URL = 'https://www.ije-api.tcore.xyz/v1/flight/search-flight';
   const { departure_city, destination_city, departure_date, return_date, ...search_param } = inputs;
   const body = JSON.stringify({
     header: { cookie },

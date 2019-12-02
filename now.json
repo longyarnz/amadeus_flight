@@ -2,7 +2,7 @@
   "version": 2,
   "name": "amadeus_flight",
   "alias": [
-    "amadeus.now.sh"
+    "flyamadeus.now.sh"
   ],
   "builds": [
     {
@@ -11,6 +11,10 @@
     },
     {
       "src": "js/*.js",
+      "use": "@now/static"
+    },
+    {
+      "src": "*.json",
       "use": "@now/static"
     },
     {

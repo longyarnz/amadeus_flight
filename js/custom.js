@@ -326,7 +326,7 @@ function autocomplete() {
         showHintOnFocus: true,
         source: function(q, cb) {
             if (q.length < 3) return;
-            const URL = `http://www.ije-api.tcore.xyz/v1/plugins/cities-type-ahead/${q}`;
+            const URL = `https://www.ije-api.tcore.xyz/v1/plugins/cities-type-ahead/${q}`;
             return $.ajax({
                 dataType: 'json',
                 type: 'get',
